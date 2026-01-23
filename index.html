@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vagabond Escapes | Luxury Travel Experiences</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #ffffff;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: white;
+    }
+    .logo-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0ea5a4, #22c55e);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: 1rem;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 14px 40px;
+      background: rgba(10, 20, 30, 0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    nav ul li a:hover {
+      color: #22c55e;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80')
+        center/cover no-repeat;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 3.4rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    header p {
+      font-size: 1.15rem;
+      margin-bottom: 28px;
+      opacity: 0.95;
+    }
+    .btn {
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #0ea5a4, #22c55e);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: 500;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 22px rgba(0,0,0,0.25);
+    }
+
+    section {
+      padding: 90px 60px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+    .section-title h2 {
+      margin: 0 0 10px;
+      font-size: 2.2rem;
+      font-weight: 600;
+    }
+    .section-title p {
+      margin: 0;
+      color: #666;
+    }
+
+    .destinations {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+    .card {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      background: white;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+    }
+    .card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 18px 20px 22px;
+    }
+    .card-body h3 {
+      margin: 0 0 8px;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+    .card-body p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+    .package {
+      border-radius: 18px;
+      padding: 28px 26px 32px;
+      text-align: center;
+      background: linear-gradient(180deg, #ffffff, #f9fafb);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+      border: 1px solid #f0f0f0;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .package:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+    }
+    .package h3 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .package p {
+      margin: 8px 0;
+      color: #555;
+      font-size: 0.95rem;
+    }
+    .price {
+      font-size: 1.9rem;
+      color: #0ea5a4;
+      margin: 16px 0;
+      font-weight: 600;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 48px;
+      align-items: center;
+    }
+    .about img {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+    }
+    .about p {
+      line-height: 1.7;
+      color: #444;
+      font-size: 0.98rem;
+      margin-top: 0;
+    }
+
+    .contact-form {
+      max-width: 620px;
+      margin: auto;
+      display: grid;
+      gap: 16px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 13px 14px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 0.95rem;
+      font-family: 'Poppins', sans-serif;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #0ea5a4;
+      box-shadow: 0 0 0 3px rgba(14,165,164,0.15);
+    }
+
+    footer {
+      background: #0b0f14;
+      color: #cbd5e1;
+      text-align: center;
+      padding: 28px 20px;
+      margin-top: 60px;
+      font-size: 0.9rem;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      background: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      text-decoration: none;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.25);
+      z-index: 2000;
+      transition: transform 0.2s ease;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 12px 20px;
+      }
+      nav ul {
+        display: none;
+      }
+      header h1 {
+        font-size: 2.4rem;
+      }
+      section {
+        padding: 70px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-circle">VE</div>
+    Vagabond Escapes
+  </div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#destinations">Destinations</a></li>
+    <li><a href="#packages">Packages</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header id="home">
+  <div>
+    <h1>Vagabond Escapes</h1>
+    <p>Luxury Journeys. Seamless Experiences. Unforgettable Memories.</p>
+    <a href="#contact" class="btn">Plan Your Trip</a>
+  </div>
+</header>
+
+<section id="destinations">
+  <div class="section-title">
+    <h2>Top Destinations</h2>
+    <p>Handpicked experiences across the globe</p>
+  </div>
+  <div class="destinations">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80">
+      <div class="card-body">
+        <h3>Bali, Indonesia</h3>
+        <p>Tropical beaches, temples & luxury resorts.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=80">
+      <div class="card-body">
+        <h3>Paris, France</h3>
+        <p>Romantic streets, art, culture & iconic views.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad?auto=format&fit=crop&w=900&q=80">
+      <div class="card-body">
+        <h3>Dubai, UAE</h3>
+        <p>Luxury shopping, skyline & desert adventures.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="packages">
+  <div class="section-title">
+    <h2>Popular Packages</h2>
+    <p>Carefully crafted journeys for every traveler</p>
+  </div>
+  <div class="packages">
+    <div class="package">
+      <h3>Romantic Bali Escape</h3>
+      <p>5 Nights / 6 Days</p>
+      <div class="price">₹74,999</div>
+      <p>4★ Resort • Airport Transfers • Sightseeing • Breakfast</p>
+      <a href="#contact" class="btn">Enquire Now</a>
+    </div>
+    <div class="package">
+      <h3>European Highlights Tour</h3>
+      <p>10 Nights / 11 Days</p>
+      <div class="price">₹2,39,999</div>
+      <p>Flights • 4★ Hotels • Guided Tours • Select Meals</p>
+      <a href="#contact" class="btn">Enquire Now</a>
+    </div>
+    <div class="package">
+      <h3>Dubai Luxury Getaway</h3>
+      <p>4 Nights / 5 Days</p>
+      <div class="price">₹84,999</div>
+      <p>4★ Hotel • Desert Safari • City Tours • Transfers</p>
+      <a href="#contact" class="btn">Enquire Now</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-title">
+    <h2>About Vagabond Escapes</h2>
+    <p>Your trusted partner in world-class travel</p>
+  </div>
+  <div class="about">
+    <div>
+      <p>
+        Vagabond Escapes is a premium travel company specializing in personalized domestic and international travel experiences.
+        We believe every journey should feel effortless, immersive, and unforgettable.
+      </p>
+      <p>
+        From luxury honeymoons and family holidays to adventure tours and corporate travel,
+        we manage everything — flights, stays, transfers, experiences — so you can focus on making memories.
+      </p>
+      <p><strong>✔ 24/7 Travel Support &nbsp;&nbsp; ✔ Best Price Guarantee &nbsp;&nbsp; ✔ Trusted by 1000+ Travelers</strong></p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1000&q=80">
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title">
+    <h2>Contact Us</h2>
+    <p>Tell us your plan — we’ll design your perfect trip</p>
+  </div>
+
+  <form class="contact-form" action="https://formsubmit.co/abhayji@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="New Travel Enquiry - Vagabond Escapes">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="tel" name="phone" placeholder="Phone / WhatsApp Number">
+    <textarea name="message" rows="5" placeholder="Tell us about your travel plan (destination, dates, budget)"></textarea>
+    <button class="btn" type="submit">Send Enquiry</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Vagabond Escapes. All Rights Reserved.</p>
+</footer>
+
+<a
+  href="https://wa.me/919773669645?text=Hello%20Vagabond%20Escapes,%20I%20want%20to%20plan%20a%20trip."
+  class="whatsapp-float"
+  target="_blank"
+  aria-label="Chat on WhatsApp"
+>💬</a>
+
+</body>
+</html>
+
