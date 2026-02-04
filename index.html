@@ -14,7 +14,7 @@
     }
     header{
       background:white;
-      padding:14px 30px;
+      padding:12px 24px;
       box-shadow:0 4px 12px rgba(0,0,0,.08);
       position:sticky;
       top:0;
@@ -26,11 +26,20 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
+      gap:12px;
     }
-    nav h2{
-      margin:0;
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
       font-weight:700;
       color:#0b5ed7;
+      font-size:20px;
+    }
+    .logo img{
+      height:42px;
+      width:auto;
+      border-radius:8px;
     }
     nav ul{
       list-style:none;
@@ -55,7 +64,7 @@
     .hero{
       background:linear-gradient(to right,#0b5ed7,#00b4ff);
       color:white;
-      padding:80px 20px;
+      padding:90px 20px;
       text-align:center;
     }
     .hero h1{margin:0;font-size:40px;}
@@ -92,7 +101,7 @@
     .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:20px;
+      gap:22px;
     }
     .card{
       background:white;
@@ -101,10 +110,15 @@
       box-shadow:0 10px 22px rgba(0,0,0,.08);
       display:flex;
       flex-direction:column;
+      transition:.25s ease;
+    }
+    .card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 16px 30px rgba(0,0,0,.12);
     }
     .card img{
       width:100%;
-      height:180px;
+      height:190px;
       object-fit:cover;
     }
     .card-body{
@@ -124,12 +138,14 @@
     footer{
       background:#0b1320;
       color:white;
-      padding:30px 20px;
+      padding:34px 20px;
       text-align:center;
-      margin-top:40px;
+      margin-top:50px;
+      font-size:14px;
+      line-height:1.7;
     }
 
-    @media(max-width:600px){
+    @media(max-width:700px){
       .hero h1{font-size:28px;}
       nav ul{display:none;}
     }
@@ -139,14 +155,17 @@
 
 <header>
   <nav>
-    <h2>Vagabond Escapes</h2>
+    <div class="logo">
+      <img src="logo.png" alt="Vagabond Escapes Logo">
+      Vagabond Escapes
+    </div>
     <ul>
       <li><a href="#home">Home</a></li>
       <li><a href="#domestic">Domestic</a></li>
       <li><a href="#international">International</a></li>
       <li><a href="#about">About</a></li>
     </ul>
-    <a href="#contact" class="btn">Enquire</a>
+    <a href="https://wa.me/919773669645" class="btn">WhatsApp</a>
   </nav>
 </header>
 
@@ -169,13 +188,13 @@
   <div class="cards">
 
     <div class="card">
-      <img src="andaman.jpg">
+      <img src="Andaman-Honeymoon1-1.jpg">
       <div class="card-body">
         <h3>Andaman Islands</h3>
         <p class="muted">3★ / 4★ Hotels • Transfers • Sightseeing</p>
         <p class="price">₹16,000 pp — 4N/5D</p>
         <p class="price">₹19,000 pp — 5N/6D</p>
-        <a href="#contact" class="btn">Enquire Now</a>
+        <a href="https://wa.me/919773669645" class="btn">Enquire on WhatsApp</a>
       </div>
     </div>
 
@@ -186,18 +205,18 @@
         <p class="muted">3★ / 4★ Hotels • Houseboat • Sightseeing</p>
         <p class="price">₹16,000 pp — 4N/5D</p>
         <p class="price">₹19,000 pp — 5N/6D</p>
-        <a href="#contact" class="btn">Enquire Now</a>
+        <a href="https://wa.me/919773669645" class="btn">Enquire on WhatsApp</a>
       </div>
     </div>
 
     <div class="card">
-      <img src="manali.avif">
+      <img src="Manali.avif">
       <div class="card-body">
         <h3>Manali</h3>
         <p class="muted">3★ / 4★ Hotels • Snow Points • Sightseeing</p>
         <p class="price">₹8,000 pp — 3N/4D</p>
         <p class="price">₹10,000 pp — 4N/5D</p>
-        <a href="#contact" class="btn">Enquire Now</a>
+        <a href="https://wa.me/919773669645" class="btn">Enquire on WhatsApp</a>
       </div>
     </div>
 
@@ -208,7 +227,7 @@
         <p class="muted">3★ / 4★ Hotels • Beachside • Transfers</p>
         <p class="price">₹7,000 pp — 3N/4D</p>
         <p class="price">₹8,500 pp — 4N/5D</p>
-        <a href="#contact" class="btn">Enquire Now</a>
+        <a href="https://wa.me/919773669645" class="btn">Enquire on WhatsApp</a>
       </div>
     </div>
 
@@ -222,35 +241,35 @@
   <div class="cards">
 
     <div class="card">
-      <img src="dubai.jpeg">
+      <img src="Dubai.jpeg">
       <div class="card-body">
         <h3>Dubai</h3>
         <p class="muted">3★ / 4★ Hotels • Desert Safari • City Tour</p>
         <p class="price">₹20,000 pp — 3N/4D</p>
         <p class="price">₹23,000 pp — 4N/5D</p>
-        <a href="#contact" class="btn">Enquire Now</a>
+        <a href="https://wa.me/919773669645" class="btn">Enquire on WhatsApp</a>
       </div>
     </div>
 
     <div class="card">
-      <img src="thailand.jpeg">
+      <img src="Thailand.jpeg">
       <div class="card-body">
         <h3>Thailand</h3>
         <p class="muted">3★ / 4★ Hotels • Bangkok + Pattaya</p>
         <p class="price">₹26,500 pp — 4N/5D</p>
         <p class="price">₹29,500 pp — Phuket + Krabi</p>
-        <a href="#contact" class="btn">Enquire Now</a>
+        <a href="https://wa.me/919773669645" class="btn">Enquire on WhatsApp</a>
       </div>
     </div>
 
     <div class="card">
-      <img src="bali.jpeg">
+      <img src="Bali.jpeg">
       <div class="card-body">
         <h3>Bali</h3>
         <p class="muted">3★ / 4★ Hotels • Sightseeing • Transfers</p>
         <p class="price">₹19,000 pp — 4N/5D</p>
         <p class="price">₹21,000 pp — 5N/6D</p>
-        <a href="#contact" class="btn">Enquire Now</a>
+        <a href="https://wa.me/919773669645" class="btn">Enquire on WhatsApp</a>
       </div>
     </div>
 
@@ -261,18 +280,18 @@
         <p class="muted">3★ / 4★ Hotels • City Tours • Transfers</p>
         <p class="price">₹50,000 pp — 5N/6D</p>
         <p class="price">₹60,000 pp — 6N/7D</p>
-        <a href="#contact" class="btn">Enquire Now</a>
+        <a href="https://wa.me/919773669645" class="btn">Enquire on WhatsApp</a>
       </div>
     </div>
 
     <div class="card">
-      <img src="singapore.webp">
+      <img src="Singapore.webp">
       <div class="card-body">
         <h3>Singapore</h3>
         <p class="muted">3★ / 4★ Hotels • Universal Studios</p>
         <p class="price">₹35,000 pp — 4N/5D</p>
         <p class="price">₹50,000 pp — 5N/6D</p>
-        <a href="#contact" class="btn">Enquire Now</a>
+        <a href="https://wa.me/919773669645" class="btn">Enquire on WhatsApp</a>
       </div>
     </div>
 
@@ -283,18 +302,18 @@
         <p class="muted">3★ / 4★ Hotels • Multi-country • Guided Tours</p>
         <p class="price">₹1,49,999 pp — 7N/8D</p>
         <p class="price">₹1,89,999 pp — 10N/11D</p>
-        <a href="#contact" class="btn">Enquire Now</a>
+        <a href="https://wa.me/919773669645" class="btn">Enquire on WhatsApp</a>
       </div>
     </div>
 
   </div>
 </section>
 
-<footer id="contact">
+<footer id="about">
   <p><strong>Vagabond Escapes Pvt. Ltd</strong></p>
   <p>📞 +91 97736 69645 | +91 75248 08364 | +91 99996 25966</p>
   <p>📧 vagabondescapesinfo@gmail.com</p>
-  <p>📍 Sitapur, Uttar Pradesh | Noida Branch</p>
+  <p>📍 Nai Bazar, Sitapur (UP) | Sector 63, Noida</p>
 </footer>
 
 </body>
