@@ -5,259 +5,466 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vagabond Escapes</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 </head>
 <body>
 
-<!-- ===== NAVBAR ===== -->
+<!-- NAVBAR -->
 <header class="navbar">
-  <div class="logo">Vagabond Escapes</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#domestic">Domestic</a>
-    <a href="#international">International</a>
-    <a href="#contact">Contact</a>
-    <a href="https://wa.me/919999999999" class="whatsapp-btn">WhatsApp</a>
-  </nav>
+  <div class="nav-container">
+    <div class="logo">
+      <!-- Replace logo.png with your real logo file -->
+      <img src="logo.png" alt="Vagabond Escapes Logo">
+      <span>Vagabond Escapes</span>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#domestic">Domestic</a>
+      <a href="#international">International</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <a href="https://wa.me/919999999999" class="whatsapp">WhatsApp</a>
+    </nav>
+  </div>
 </header>
 
-<!-- ===== HERO SECTION ===== -->
+<!-- HERO -->
 <section class="hero" id="home">
+  <div class="hero-overlay"></div>
   <div class="hero-content">
-    <h1>Travel Beyond Boundaries</h1>
-    <p>Premium domestic & international holiday packages at best prices.</p>
-    <a href="#domestic" class="primary-btn">Explore Packages</a>
+    <h1>Luxury Journeys. Seamless Experiences.</h1>
+    <p>Premium domestic & international holiday packages with best hotels & pricing.</p>
+    <a href="#domestic" class="btn-primary">Explore Packages</a>
   </div>
 </section>
 
-<!-- ===== DOMESTIC ===== -->
+<!-- FEATURES -->
+<section class="features">
+  <div>⭐ 3★–5★ Hotels</div>
+  <div>🎯 100% Custom Trips</div>
+  <div>📞 24/7 Support</div>
+  <div>💳 Secure Payments</div>
+</section>
+
+<!-- DOMESTIC -->
 <section class="section" id="domestic">
-  <h2>Domestic Holiday Packages</h2>
-  <div class="card-grid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1587502536263-9298cba9d9df?auto=format&fit=crop&w=800&q=80" />
-      <h3>Manali</h3>
-      <p>3 Nights / 4 Days</p>
-      <a href="https://wa.me/919999999999" class="secondary-btn">Enquire on WhatsApp</a>
-    </div>
+  <h2>Domestic Packages</h2>
+  <p class="subtitle">Best destinations across India</p>
 
+  <div class="cards">
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1603871941372-9a61aebec1b4?auto=format&fit=crop&w=800&q=80" />
+      <img src="https://images.unsplash.com/photo-1603871941372-9a61aebec1b4?auto=format&fit=crop&w=1200&q=80">
       <h3>Goa</h3>
-      <p>4 Nights / 5 Days</p>
-      <a href="https://wa.me/919999999999" class="secondary-btn">Enquire on WhatsApp</a>
+      <p>3N / 4D • Beach Holiday</p>
+      <button class="btn-secondary book-btn" data-place="Goa" data-price="19999">Book Now</button>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&w=800&q=80" />
+      <img src="https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&w=1200&q=80">
       <h3>Kerala</h3>
-      <p>5 Nights / 6 Days</p>
-      <a href="https://wa.me/919999999999" class="secondary-btn">Enquire on WhatsApp</a>
+      <p>4N / 5D • Backwaters</p>
+      <button class="btn-secondary book-btn" data-place="Kerala" data-price="24999">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1587502536263-9298cba9d9df?auto=format&fit=crop&w=1200&q=80">
+      <h3>Manali</h3>
+      <p>3N / 4D • Snow Adventure</p>
+      <button class="btn-secondary book-btn" data-place="Manali" data-price="17999">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1595815771614-ade9d652a65d?auto=format&fit=crop&w=1200&q=80">
+      <h3>Andaman</h3>
+      <p>4N / 5D • Island Stay</p>
+      <button class="btn-secondary book-btn" data-place="Andaman" data-price="34999">Book Now</button>
     </div>
   </div>
 </section>
 
-<!-- ===== INTERNATIONAL ===== -->
-<section class="section" id="international">
-  <h2>International Holiday Packages</h2>
-  <div class="card-grid">
+<!-- INTERNATIONAL -->
+<section class="section light" id="international">
+  <h2>International Packages</h2>
+  <p class="subtitle">Top global destinations</p>
+
+  <div class="cards">
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?auto=format&fit=crop&w=800&q=80" />
+      <img src="https://images.unsplash.com/photo-1505765050516-f72dcac9c60e?auto=format&fit=crop&w=1200&q=80">
       <h3>Dubai</h3>
-      <p>4 Nights / 5 Days</p>
-      <a href="https://wa.me/919999999999" class="secondary-btn">Enquire on WhatsApp</a>
+      <p>4N / 5D • Luxury Tour</p>
+      <button class="btn-secondary book-btn" data-place="Dubai" data-price="49999">Book Now</button>
     </div>
 
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=80" />
-      <h3>Paris</h3>
-      <p>5 Nights / 6 Days</p>
-      <a href="https://wa.me/919999999999" class="secondary-btn">Enquire on WhatsApp</a>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1526481280690-7eadbe35c7c3?auto=format&fit=crop&w=800&q=80" />
+      <img src="https://images.unsplash.com/photo-1526481280690-7eadbe35c7c3?auto=format&fit=crop&w=1200&q=80">
       <h3>Bali</h3>
-      <p>5 Nights / 6 Days</p>
-      <a href="https://wa.me/919999999999" class="secondary-btn">Enquire on WhatsApp</a>
+      <p>5N / 6D • Beach Villas</p>
+      <button class="btn-secondary book-btn" data-place="Bali" data-price="69999">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80">
+      <h3>Paris</h3>
+      <p>5N / 6D • Romantic City</p>
+      <button class="btn-secondary book-btn" data-place="Paris" data-price="119999">Book Now</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1506158669146-619067262a00?auto=format&fit=crop&w=1200&q=80">
+      <h3>Thailand</h3>
+      <p>4N / 5D • Bangkok + Phuket</p>
+      <button class="btn-secondary book-btn" data-place="Thailand" data-price="59999">Book Now</button>
     </div>
   </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
+<!-- SLIDER -->
+<section class="section slider-section" id="gallery">
+  <h2>Travel Moments</h2>
+  <div class="slider">
+    <div class="slides active">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80">
+    </div>
+    <div class="slides">
+      <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1600&q=80">
+    </div>
+    <div class="slides">
+      <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1600&q=80">
+    </div>
+    <div class="slides">
+      <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=80">
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials">
+  <h2>Happy Customers</h2>
+  <div class="test-grid">
+    <div class="test-card">
+      ⭐⭐⭐⭐⭐
+      <p>"Best travel agency ever! Everything was perfect."</p>
+      <h4>— Riya Sharma</h4>
+    </div>
+    <div class="test-card">
+      ⭐⭐⭐⭐⭐
+      <p>"Dubai trip was amazing. Great support team."</p>
+      <h4>— Aman Verma</h4>
+    </div>
+    <div class="test-card">
+      ⭐⭐⭐⭐⭐
+      <p>"Affordable packages with luxury service."</p>
+      <h4>— Neha Gupta</h4>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section class="section contact" id="contact">
-  <h2>Quick Enquiry</h2>
-  <form>
-    <input type="text" placeholder="Your Name" required />
-    <input type="tel" placeholder="Phone Number" required />
-    <input type="email" placeholder="Email Address" required />
-    <textarea placeholder="Tell us your travel plan..." rows="4"></textarea>
-    <button type="submit">Submit Enquiry</button>
+  <h2>Quick Booking / Enquiry</h2>
+  <form id="contactForm">
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+    <input type="email" id="email" placeholder="Email Address" required>
+    <select id="destination" required>
+      <option value="">Select Destination</option>
+      <option>Goa</option>
+      <option>Manali</option>
+      <option>Kerala</option>
+      <option>Andaman</option>
+      <option>Dubai</option>
+      <option>Bali</option>
+      <option>Paris</option>
+      <option>Thailand</option>
+    </select>
+    <textarea id="message" rows="4" placeholder="Your travel plan..."></textarea>
+    <button type="submit">Send Enquiry</button>
   </form>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- FOOTER -->
 <footer class="footer">
-  <p>© 2026 Vagabond Escapes. All Rights Reserved.</p>
+  <p><strong>Vagabond Escapes Pvt. Ltd.</strong></p>
+  <p>📞 +91 97736 69645 | +91 75248 08364 | +91 99996 25966</p>
+  <p>📧 vagabondescapesinfo@gmail.com</p>
+  <p>📍 Sitapur, Uttar Pradesh | Noida Branch</p>
+  <p>© 2026 All Rights Reserved</p>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
 }
 
 body {
-  background: #f8f9fb;
+  background: #f6f8fb;
   color: #222;
 }
 
-/* ===== NAVBAR ===== */
+/* NAVBAR */
 .navbar {
   background: white;
-  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 700;
   color: #0077ff;
 }
 
-.navbar nav a {
-  margin-left: 20px;
+.logo img {
+  height: 38px;
+}
+
+nav a {
+  margin-left: 18px;
   text-decoration: none;
   color: #333;
   font-weight: 500;
 }
 
-.whatsapp-btn {
+.whatsapp {
   background: #25d366;
   color: white !important;
   padding: 8px 16px;
   border-radius: 20px;
 }
 
-/* ===== HERO ===== */
+/* HERO */
 .hero {
-  height: 90vh;
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80")
-      center/cover no-repeat;
+  height: 92vh;
+  background: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80")
+    center/cover no-repeat;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 }
 
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
 .hero-content {
+  position: relative;
+  z-index: 2;
   color: white;
-  max-width: 600px;
+  max-width: 720px;
+  padding: 20px;
 }
 
 .hero-content h1 {
-  font-size: 44px;
-  margin-bottom: 12px;
+  font-size: 46px;
+  margin-bottom: 14px;
 }
 
 .hero-content p {
   font-size: 18px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
-.primary-btn {
-  background: #00b4ff;
+.btn-primary {
+  background: linear-gradient(to right, #00b4ff, #0077ff);
   color: white;
-  padding: 12px 26px;
-  border-radius: 25px;
+  padding: 12px 30px;
+  border-radius: 30px;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
 }
 
-/* ===== SECTIONS ===== */
-.section {
-  padding: 60px 8%;
+/* FEATURES */
+.features {
+  max-width: 1100px;
+  margin: -30px auto 60px;
+  background: white;
+  border-radius: 40px;
+  padding: 18px 10px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  font-size: 14px;
+  font-weight: 600;
   text-align: center;
 }
 
-.section h2 {
-  font-size: 32px;
-  margin-bottom: 30px;
+/* SECTIONS */
+.section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 70px 20px;
+  text-align: center;
 }
 
-/* ===== CARDS ===== */
-.card-grid {
+.section.light {
+  background: white;
+  border-radius: 40px;
+  margin: 40px auto;
+}
+
+.section h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* CARDS */
+.cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
 }
 
 .card {
   background: white;
-  border-radius: 15px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
 }
 
 .card img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
 }
 
 .card h3 {
-  margin: 15px 0 5px;
+  margin: 16px 0 6px;
+  font-size: 20px;
 }
 
 .card p {
   color: #666;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
+  font-size: 14px;
 }
 
-.secondary-btn {
+.btn-secondary {
   display: inline-block;
   margin-bottom: 18px;
   background: #0077ff;
   color: white;
-  padding: 8px 18px;
+  padding: 9px 20px;
   border-radius: 20px;
   text-decoration: none;
   font-size: 14px;
+  border: none;
+  cursor: pointer;
 }
 
-/* ===== CONTACT ===== */
+/* SLIDER */
+.slider-section {
+  background: #fff;
+  border-radius: 40px;
+  margin: 60px auto;
+}
+
+.slider {
+  position: relative;
+  max-width: 1000px;
+  margin: 40px auto 0;
+  height: 380px;
+  overflow: hidden;
+  border-radius: 24px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.slides {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.slides.active {
+  opacity: 1;
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  background: linear-gradient(to right, #0077ff, #00b4ff);
+  color: white;
+  border-radius: 40px;
+  margin: 60px auto;
+}
+
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.test-card {
+  background: rgba(255,255,255,0.15);
+  padding: 24px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.test-card h4 {
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+/* CONTACT */
 .contact form {
-  max-width: 450px;
+  max-width: 520px;
   margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .contact input,
-.contact textarea {
+.contact textarea,
+.contact select {
   padding: 12px;
-  border-radius: 8px;
+  border-radius: 12px;
   border: 1px solid #ccc;
   font-size: 14px;
 }
 
 .contact button {
-  background: #00b4ff;
+  background: linear-gradient(to right, #00b4ff, #0077ff);
   color: white;
   padding: 12px;
   border: none;
@@ -266,11 +473,33 @@ body {
   cursor: pointer;
 }
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 .footer {
-  background: #111;
+  background: #0f172a;
   color: white;
   text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 28px 20px;
+  margin-top: 60px;
+  font-size: 14px;
+}
+
+/* MOBILE */
+@media (max-width: 720px) {
+  nav a {
+    display: none;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .features {
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 24px;
+  }
+
+  .slider {
+    height: 260px;
+  }
 }
