@@ -2,475 +2,349 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vagabond Escapes Pvt. Ltd.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
     body{background:#f7f9fc;color:#222}
-    a{text-decoration:none}
-    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
 
     header{
-      position:fixed;
-      top:0;
-      width:100%;
       background:#fff;
-      box-shadow:0 2px 10px rgba(0,0,0,.1);
-      z-index:1000;
-    }
-    .nav{
-      max-width:1200px;
-      margin:auto;
-      padding:12px 20px;
+      padding:15px 40px;
       display:flex;
-      align-items:center;
       justify-content:space-between;
+      align-items:center;
+      box-shadow:0 2px 10px rgba(0,0,0,.08);
+      position:sticky;
+      top:0;
+      z-index:1000;
     }
     .logo{
       display:flex;
       align-items:center;
       gap:10px;
-      font-weight:700;
-      font-size:20px;
+      font-size:22px;
+      font-weight:bold;
       color:#0066ff;
     }
     .logo img{height:45px}
     nav a{
-      margin-left:20px;
+      margin:0 12px;
+      font-weight:600;
       color:#333;
-      font-weight:500;
     }
     nav a:hover{color:#0066ff}
-
     .whatsapp-btn{
       background:#25D366;
       color:#fff;
       padding:10px 16px;
-      border-radius:30px;
-      font-weight:600;
-      margin-left:15px;
+      border-radius:20px;
+      font-weight:bold;
     }
 
     .hero{
-      margin-top:80px;
-      height:80vh;
-      position:relative;
-      overflow:hidden;
-    }
-    .slides{
-      display:flex;
-      width:300%;
-      height:100%;
-      animation:slide 15s infinite;
-    }
-    .slide{
-      width:100%;
-      height:100%;
-      background-size:cover;
-      background-position:center;
-      position:relative;
-    }
-    .overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to right, rgba(0,0,0,.55), rgba(0,0,0,.2));
-      display:flex;
-      align-items:center;
-    }
-    .hero-content{
-      max-width:1200px;
-      margin:auto;
-      padding:20px;
+      background:linear-gradient(to right,#0066ff,#00b3ff);
       color:#fff;
+      padding:70px 20px;
+      text-align:center;
     }
-    .hero-content h1{
-      font-size:48px;
-      line-height:1.2;
-      margin-bottom:10px;
-    }
-    .hero-content p{
-      font-size:18px;
-      margin-bottom:20px;
-    }
-    .btn-primary{
-      background:#ff6b00;
-      color:#fff;
-      padding:12px 22px;
-      border-radius:30px;
-      font-weight:600;
-      display:inline-block;
-    }
-
-    @keyframes slide{
-      0%{transform:translateX(0)}
-      33%{transform:translateX(0)}
-      36%{transform:translateX(-100%)}
-      66%{transform:translateX(-100%)}
-      69%{transform:translateX(-200%)}
-      100%{transform:translateX(-200%)}
-    }
+    .hero h1{font-size:42px;margin-bottom:10px}
+    .hero p{font-size:18px;opacity:.95}
 
     .features{
-      max-width:1200px;
-      margin:40px auto;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
-      padding:0 20px;
-    }
-    .feature{
+      max-width:1100px;
+      margin:-40px auto 40px;
       background:#fff;
-      padding:25px;
-      border-radius:14px;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
       text-align:center;
-      box-shadow:0 6px 15px rgba(0,0,0,.06);
+      overflow:hidden;
     }
-    .feature h3{margin-bottom:6px;color:#0066ff}
+    .feature{padding:25px 15px}
+    .feature h4{margin-bottom:6px;color:#0066ff}
 
     .section{
       max-width:1200px;
-      margin:60px auto;
+      margin:50px auto;
       padding:0 20px;
     }
     .section h2{
       text-align:center;
-      font-size:32px;
       margin-bottom:30px;
+      font-size:30px;
     }
 
-    .packages{
+    .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:22px;
+      gap:25px;
     }
     .card{
       background:#fff;
       border-radius:16px;
+      box-shadow:0 6px 18px rgba(0,0,0,.08);
       overflow:hidden;
-      box-shadow:0 8px 20px rgba(0,0,0,.08);
-      transition:.3s;
+      transition:.25s;
     }
     .card:hover{transform:translateY(-6px)}
-    .card img{height:180px;object-fit:cover}
-    .card-body{
-      padding:18px;
+    .card img{
+      width:100%;
+      height:190px;
+      object-fit:cover;
     }
-    .card-body h3{margin-bottom:6px}
-    .price{
-      color:#ff6b00;
-      font-weight:700;
-      margin:6px 0;
-    }
-    .card-body button{
+    .card-body{padding:16px}
+    .card-body h3{margin-bottom:8px}
+    .price{font-size:14px;margin:4px 0}
+    .hotel{color:#ff6a00;font-weight:bold;font-size:13px;margin:6px 0}
+    .btn{
+      display:inline-block;
+      background:#0066ff;
+      color:#fff;
+      padding:8px 14px;
+      border-radius:20px;
+      font-size:13px;
+      font-weight:bold;
       margin-top:10px;
+    }
+
+    /* Booking Section */
+    .booking-box{
+      background:#fff;
+      max-width:900px;
+      margin:60px auto;
+      padding:30px 20px;
+      border-radius:20px;
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+    }
+    .booking-box h2{text-align:center;margin-bottom:20px}
+    form{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:15px;
+    }
+    input,select,textarea{
+      padding:10px;
+      border-radius:8px;
+      border:1px solid #ccc;
+      font-size:14px;
+    }
+    textarea{grid-column:1/-1;resize:none;height:90px}
+    .form-actions{
+      grid-column:1/-1;
+      text-align:center;
+      margin-top:10px;
+    }
+    .submit-btn{
       background:#0066ff;
       color:#fff;
       border:none;
-      padding:10px 16px;
+      padding:10px 18px;
       border-radius:20px;
-      cursor:pointer;
-      font-weight:600;
-    }
-
-    .booking-form{
-      background:#fff;
-      padding:30px;
-      border-radius:18px;
-      max-width:900px;
-      margin:auto;
-      box-shadow:0 10px 25px rgba(0,0,0,.08);
-    }
-    .booking-form h3{text-align:center;margin-bottom:20px}
-    .form-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:15px;
-    }
-    .booking-form input,.booking-form select,.booking-form textarea{
-      width:100%;
-      padding:12px;
-      border-radius:10px;
-      border:1px solid #ddd;
-      font-size:14px;
-    }
-    .booking-form textarea{resize:none}
-    .form-actions{
-      margin-top:15px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      justify-content:center;
-    }
-    .form-actions button{
-      border:none;
-      padding:12px 20px;
-      border-radius:30px;
-      font-weight:600;
+      font-weight:bold;
       cursor:pointer;
     }
-    .btn-whatsapp{background:#25D366;color:#fff}
-    .btn-pay{background:#ff6b00;color:#fff}
-    .btn-submit{background:#0066ff;color:#fff}
-
-    .testimonials{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:20px;
+    .pay-btn{
+      background:#0f9d58;
+      margin-left:10px;
     }
-    .testimonial{
-      background:#fff;
-      padding:22px;
-      border-radius:16px;
-      box-shadow:0 6px 15px rgba(0,0,0,.07);
-    }
-    .testimonial p{font-size:14px;margin-bottom:10px}
-    .testimonial h4{color:#0066ff}
-
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:12px;
-    }
-    .gallery img{
-      border-radius:14px;
-      height:180px;
-      object-fit:cover;
-      box-shadow:0 6px 12px rgba(0,0,0,.08);
-      transition:.3s;
-    }
-    .gallery img:hover{transform:scale(1.05)}
 
     footer{
-      background:#0b1c36;
+      background:#0b1a33;
       color:#fff;
-      margin-top:60px;
       padding:40px 20px;
+      margin-top:60px;
     }
-    .footer-grid{
-      max-width:1200px;
+    .footer-wrap{
+      max-width:1100px;
       margin:auto;
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:20px;
+      gap:25px;
     }
-    footer h3{margin-bottom:10px;color:#ffb703}
+    footer h4{margin-bottom:10px}
     footer p,footer a{font-size:14px;color:#ddd}
     footer a:hover{color:#fff}
 
     @media(max-width:600px){
-      .hero-content h1{font-size:32px}
+      .hero h1{font-size:32px}
     }
   </style>
 </head>
 <body>
 
+<!-- ================= HEADER ================= -->
 <header>
-  <div class="nav">
-    <div class="logo">
-      <img src="logo.png" alt="Vagabond Escapes Logo">
-      Vagabond Escapes
-    </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#domestic">Domestic</a>
-      <a href="#international">International</a>
-      <a href="#booking">Booking</a>
-      <a href="#contact">Contact</a>
-      <a class="whatsapp-btn" href="https://wa.me/919773669645" target="_blank">WhatsApp</a>
-    </nav>
+  <div class="logo">
+    <img src="images/logo.png" alt="Vagabond Escapes Logo">
+    Vagabond Escapes
   </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#domestic">Domestic</a>
+    <a href="#international">International</a>
+    <a href="#booking">Booking</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a class="whatsapp-btn" href="https://wa.me/919773669645?text=Hi%20Vagabond%20Escapes,%20I%20want%20to%20book%20a%20trip." target="_blank">WhatsApp</a>
 </header>
 
+<!-- ================= HERO ================= -->
 <section class="hero" id="home">
-  <div class="slides">
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80')">
-      <div class="overlay">
-        <div class="hero-content">
-          <h1>Luxury Journeys.<br>Seamless Experiences.</h1>
-          <p>Premium domestic & international holiday packages with best hotels & pricing.</p>
-          <a href="#booking" class="btn-primary">Book Your Trip</a>
-        </div>
-      </div>
-    </div>
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1600&q=80')">
-      <div class="overlay">
-        <div class="hero-content">
-          <h1>Explore The World<br>With Confidence</h1>
-          <p>Handpicked hotels, custom itineraries & 24/7 travel support.</p>
-          <a href="#domestic" class="btn-primary">View Packages</a>
-        </div>
-      </div>
-    </div>
-    <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80')">
-      <div class="overlay">
-        <div class="hero-content">
-          <h1>Dream Destinations<br>Made Affordable</h1>
-          <p>Best deals on honeymoon, family & group tours.</p>
-          <a href="#international" class="btn-primary">International Trips</a>
-        </div>
-      </div>
-    </div>
-  </div>
+  <h1>Luxury Journeys. Seamless Experiences.</h1>
+  <p>Premium domestic & international holiday packages with best hotels and pricing.</p>
 </section>
 
-<section class="features">
+<!-- ================= FEATURES ================= -->
+<div class="features">
   <div class="feature">
-    <h3>3★–4★ Hotels</h3>
+    <h4>3★–4★ Hotels</h4>
     <p>Verified quality stays</p>
   </div>
   <div class="feature">
-    <h3>100% Customized</h3>
+    <h4>100% Customized</h4>
     <p>Your trip, your way</p>
   </div>
   <div class="feature">
-    <h3>24/7 Support</h3>
+    <h4>24/7 Support</h4>
     <p>Always available</p>
   </div>
   <div class="feature">
-    <h3>Transparent Pricing</h3>
+    <h4>Transparent Pricing</h4>
     <p>No hidden charges</p>
   </div>
-</section>
+</div>
 
 <!-- ================= DOMESTIC ================= -->
 <section class="section" id="domestic">
   <h2>Domestic Packages</h2>
-  <div class="packages">
-    <!-- Andaman -->
+  <div class="cards">
+
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1576485290814-1c72aa4bbb8e?auto=format&fit=crop&w=1200&q=80">
+      <img src="images/andaman.jpg" alt="Andaman">
       <div class="card-body">
         <h3>Andaman</h3>
-        <p>4N/5D – ₹16,000 per person</p>
-        <p>5N/6D – ₹19,000 per person</p>
-        <div class="price">3★–4★ Hotels</div>
-        <button onclick="selectPackage('Andaman')">Book Now</button>
+        <p class="price">4N/5D – ₹16,000 per person</p>
+        <p class="price">5N/6D – ₹19,000 per person</p>
+        <p class="hotel">3★–4★ Hotels</p>
+        <a class="btn" href="#booking" onclick="setPackage('Andaman')">Book Now</a>
       </div>
     </div>
 
-    <!-- Kerala -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?auto=format&fit=crop&w=1200&q=80">
+      <img src="images/kerala.jpg" alt="Kerala">
       <div class="card-body">
         <h3>Kerala</h3>
-        <p>4N/5D – ₹16,000 per person</p>
-        <p>5N/6D – ₹19,000 per person</p>
-        <div class="price">3★–4★ Hotels</div>
-        <button onclick="selectPackage('Kerala')">Book Now</button>
+        <p class="price">4N/5D – ₹16,000 per person</p>
+        <p class="price">5N/6D – ₹19,000 per person</p>
+        <p class="hotel">3★–4★ Hotels</p>
+        <a class="btn" href="#booking" onclick="setPackage('Kerala')">Book Now</a>
       </div>
     </div>
 
-    <!-- Manali -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1600431521340-491eca880813?auto=format&fit=crop&w=1200&q=80">
+      <img src="images/manali.jpg" alt="Manali">
       <div class="card-body">
         <h3>Manali</h3>
-        <p>3N/4D – ₹8,000 per person</p>
-        <p>4N/5D – ₹10,000 per person</p>
-        <div class="price">3★–4★ Hotels</div>
-        <button onclick="selectPackage('Manali')">Book Now</button>
+        <p class="price">3N/4D – ₹8,000 per person</p>
+        <p class="price">4N/5D – ₹10,000 per person</p>
+        <p class="hotel">3★–4★ Hotels</p>
+        <a class="btn" href="#booking" onclick="setPackage('Manali')">Book Now</a>
       </div>
     </div>
 
-    <!-- Goa -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
+      <img src="images/goa.jpg" alt="Goa">
       <div class="card-body">
         <h3>Goa</h3>
-        <p>3N/4D – ₹7,000 per person</p>
-        <p>4N/5D – ₹8,500 per person</p>
-        <div class="price">3★–4★ Hotels</div>
-        <button onclick="selectPackage('Goa')">Book Now</button>
+        <p class="price">3N/4D – ₹7,000 per person</p>
+        <p class="price">4N/5D – ₹8,500 per person</p>
+        <p class="hotel">3★–4★ Hotels</p>
+        <a class="btn" href="#booking" onclick="setPackage('Goa')">Book Now</a>
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- ================= INTERNATIONAL ================= -->
 <section class="section" id="international">
   <h2>International Packages</h2>
-  <div class="packages">
+  <div class="cards">
 
-    <!-- Dubai -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=1200&q=80">
+      <img src="images/dubai.jpg" alt="Dubai">
       <div class="card-body">
         <h3>Dubai</h3>
-        <p>3N/4D – ₹20,000 per person</p>
-        <p>4N/5D – ₹23,000 per person</p>
-        <div class="price">3★–4★ Hotels</div>
-        <button onclick="selectPackage('Dubai')">Book Now</button>
+        <p class="price">3N/4D – ₹20,000 per person</p>
+        <p class="price">4N/5D – ₹23,000 per person</p>
+        <p class="hotel">3★–4★ Hotels</p>
+        <a class="btn" href="#booking" onclick="setPackage('Dubai')">Book Now</a>
       </div>
     </div>
 
-    <!-- Thailand Bangkok Pattaya -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1200&q=80">
+      <img src="images/bangkok.jpg" alt="Thailand Bangkok Pattaya">
       <div class="card-body">
         <h3>Thailand (Bangkok + Pattaya)</h3>
-        <p>2N Bangkok + 2N Pattaya</p>
-        <p class="price">₹26,500 per person</p>
-        <button onclick="selectPackage('Thailand Bangkok + Pattaya')">Book Now</button>
+        <p class="price">2N Bangkok + 2N Pattaya – ₹26,500 per person</p>
+        <p class="hotel">3★–4★ Hotels</p>
+        <a class="btn" href="#booking" onclick="setPackage('Thailand Bangkok + Pattaya')">Book Now</a>
       </div>
     </div>
 
-    <!-- Thailand Phuket Krabi -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80">
+      <img src="images/phuket.jpg" alt="Thailand Phuket Krabi">
       <div class="card-body">
         <h3>Thailand (Phuket + Krabi)</h3>
-        <p>2N Phuket + 2N Krabi</p>
-        <p class="price">₹29,500 per person</p>
-        <button onclick="selectPackage('Thailand Phuket + Krabi')">Book Now</button>
+        <p class="price">2N Phuket + 2N Krabi – ₹29,500 per person</p>
+        <p class="hotel">3★–4★ Hotels</p>
+        <a class="btn" href="#booking" onclick="setPackage('Thailand Phuket + Krabi')">Book Now</a>
       </div>
     </div>
 
-    <!-- Bali -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1505739771285-1f4b1c59e4c4?auto=format&fit=crop&w=1200&q=80">
+      <img src="images/bali.jpg" alt="Bali">
       <div class="card-body">
         <h3>Bali</h3>
-        <p>4N/5D – ₹19,000 per person</p>
-        <p>5N/6D – ₹21,000 per person</p>
-        <div class="price">3★–4★ Hotels</div>
-        <button onclick="selectPackage('Bali')">Book Now</button>
+        <p class="price">4N/5D – ₹19,000 per person</p>
+        <p class="price">5N/6D – ₹21,000 per person</p>
+        <p class="hotel">3★–4★ Hotels</p>
+        <a class="btn" href="#booking" onclick="setPackage('Bali')">Book Now</a>
       </div>
     </div>
 
-    <!-- Vietnam -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80">
+      <img src="images/vietnam.jpg" alt="Vietnam">
       <div class="card-body">
         <h3>Vietnam</h3>
-        <p>5N/6D – ₹50,000 per person</p>
-        <p>6N/7D – ₹60,000 per person</p>
-        <div class="price">3★–4★ Hotels</div>
-        <button onclick="selectPackage('Vietnam')">Book Now</button>
+        <p class="price">5N/6D – ₹50,000 per person</p>
+        <p class="price">6N/7D – ₹60,000 per person</p>
+        <p class="hotel">3★–4★ Hotels</p>
+        <a class="btn" href="#booking" onclick="setPackage('Vietnam')">Book Now</a>
       </div>
     </div>
 
-    <!-- Singapore -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80">
+      <img src="images/singapore.jpg" alt="Singapore">
       <div class="card-body">
         <h3>Singapore</h3>
-        <p>4N/5D – ₹35,000 per person</p>
-        <p>5N/6D – ₹50,000 per person</p>
-        <div class="price">3★–4★ Hotels</div>
-        <button onclick="selectPackage('Singapore')">Book Now</button>
+        <p class="price">4N/5D – ₹35,000 per person</p>
+        <p class="price">5N/6D – ₹50,000 per person</p>
+        <p class="hotel">3★–4★ Hotels</p>
+        <a class="btn" href="#booking" onclick="setPackage('Singapore')">Book Now</a>
       </div>
     </div>
 
-    <!-- Europe (Auto Added) -->
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80">
+      <img src="images/europe.jpg" alt="Europe Tour">
       <div class="card-body">
         <h3>Europe Tour</h3>
-        <p>France • Switzerland • Italy</p>
-        <p class="price">Starting ₹1,25,000 per person</p>
-        <button onclick="selectPackage('Europe Tour')">Book Now</button>
+        <p class="price">Starting from ₹95,000 per person</p>
+        <p class="hotel">3★–4★ Hotels</p>
+        <a class="btn" href="#booking" onclick="setPackage('Europe Tour')">Book Now</a>
       </div>
     </div>
 
@@ -478,158 +352,83 @@
 </section>
 
 <!-- ================= BOOKING ================= -->
-<section class="section" id="booking">
+<section class="booking-box" id="booking">
   <h2>Book Your Trip</h2>
-  <div class="booking-form">
-    <h3>Quick Booking Form</h3>
-    <form id="bookingForm">
-      <div class="form-grid">
-        <input type="text" id="name" placeholder="Full Name" required>
-        <input type="tel" id="phone" placeholder="Phone Number" required>
-        <input type="email" id="email" placeholder="Email Address" required>
-        <select id="destination" required>
-          <option value="">Select Destination</option>
-          <option>Andaman</option>
-          <option>Kerala</option>
-          <option>Manali</option>
-          <option>Goa</option>
-          <option>Dubai</option>
-          <option>Thailand Bangkok + Pattaya</option>
-          <option>Thailand Phuket + Krabi</option>
-          <option>Bali</option>
-          <option>Vietnam</option>
-          <option>Singapore</option>
-          <option>Europe Tour</option>
-        </select>
-        <input type="date" id="date" required>
-        <input type="number" id="people" placeholder="No. of Travellers" min="1" required>
-        <textarea id="message" rows="3" placeholder="Special Requirements (Optional)"></textarea>
-      </div>
-
-      <div class="form-actions">
-        <button type="button" class="btn-whatsapp" onclick="sendWhatsApp()">WhatsApp Booking</button>
-        <button type="button" class="btn-pay" onclick="payNow()">Pay Now</button>
-        <button type="submit" class="btn-submit">Submit Enquiry</button>
-      </div>
-    </form>
-  </div>
+  <form id="bookingForm">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="tel" id="phone" placeholder="Phone Number" required>
+    <input type="email" id="email" placeholder="Email Address">
+    <select id="package">
+      <option value="">Select Package</option>
+      <option>Andaman</option>
+      <option>Kerala</option>
+      <option>Manali</option>
+      <option>Goa</option>
+      <option>Dubai</option>
+      <option>Thailand Bangkok + Pattaya</option>
+      <option>Thailand Phuket + Krabi</option>
+      <option>Bali</option>
+      <option>Vietnam</option>
+      <option>Singapore</option>
+      <option>Europe Tour</option>
+    </select>
+    <input type="date" id="date">
+    <input type="number" id="persons" placeholder="No. of Persons">
+    <textarea id="message" placeholder="Any special requirements..."></textarea>
+    <div class="form-actions">
+      <button type="button" class="submit-btn" onclick="sendWhatsApp()">Send on WhatsApp</button>
+      <button type="button" class="submit-btn pay-btn" onclick="payNow()">Pay Now</button>
+    </div>
+  </form>
 </section>
 
-<!-- ================= TESTIMONIALS ================= -->
-<section class="section">
-  <h2>What Our Customers Say</h2>
-  <div class="testimonials">
-    <div class="testimonial">
-      <p>“Best travel experience ever! Everything was perfectly organized. Hotels and transfers were top-notch.”</p>
-      <h4>— Rahul Sharma</h4>
-    </div>
-    <div class="testimonial">
-      <p>“Booked Bali honeymoon package. Amazing service, great prices and 24/7 support. Highly recommended.”</p>
-      <h4>— Pooja Verma</h4>
-    </div>
-    <div class="testimonial">
-      <p>“Our Dubai family trip was smooth and memorable. Vagabond Escapes handled everything professionally.”</p>
-      <h4>— Aman Gupta</h4>
-    </div>
-  </div>
-</section>
-
-<!-- ================= GALLERY ================= -->
-<section class="section">
-  <h2>Travel Gallery</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80">
-    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80">
-    <img src="https://images.unsplash.com/photo-1500835556837-99ac94a94552?auto=format&fit=crop&w=1200&q=80">
-    <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80">
-    <img src="https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=1200&q=80">
-    <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80">
-    <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80">
-    <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1200&q=80">
-  </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
+<!-- ================= FOOTER ================= -->
 <footer id="contact">
-  <div class="footer-grid">
+  <div class="footer-wrap">
     <div>
-      <h3>Vagabond Escapes Pvt. Ltd.</h3>
+      <h4>Vagabond Escapes Pvt. Ltd.</h4>
       <p>Email: vagabondescapesinfo@gmail.com</p>
       <p>Phone: 9773669645, 7524808364, 9999625966</p>
     </div>
     <div>
-      <h3>Office Address</h3>
-      <p>Nai Bazar, Block A/359,<br>Mahmudabad, Sitapur,<br>Uttar Pradesh – 261203</p>
+      <h4>Office Address</h4>
+      <p>Nai Bajar, Block A/359, Mahmudabad,<br> Sitapur, Uttar Pradesh – 261203</p>
       <br>
-      <p>A-135, A Block, Sector 63,<br>Noida, Uttar Pradesh – 201309</p>
+      <p>A-135, A Block, Sector 63,<br> Noida, Uttar Pradesh – 201309</p>
     </div>
     <div>
-      <h3>Quick Links</h3>
+      <h4>Quick Links</h4>
       <p><a href="#home">Home</a></p>
       <p><a href="#domestic">Domestic Packages</a></p>
       <p><a href="#international">International Packages</a></p>
       <p><a href="#booking">Booking</a></p>
     </div>
-    <div>
-      <h3>Why Choose Us?</h3>
-      <p>✔ 3★–4★ Hotels</p>
-      <p>✔ Customized Itineraries</p>
-      <p>✔ Best Price Guarantee</p>
-      <p>✔ 24/7 Customer Support</p>
-    </div>
   </div>
-  <p style="text-align:center;margin-top:25px;font-size:13px;color:#aaa">
-    © 2026 Vagabond Escapes Pvt. Ltd. All Rights Reserved.
-  </p>
 </footer>
 
+<!-- ================= SCRIPT ================= -->
 <script>
-  function selectPackage(name){
-    document.getElementById("destination").value = name;
-    document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+  function setPackage(name){
+    document.getElementById("package").value = name;
+    window.location.hash = "booking";
   }
 
   function sendWhatsApp(){
     const name = document.getElementById("name").value;
     const phone = document.getElementById("phone").value;
     const email = document.getElementById("email").value;
-    const dest = document.getElementById("destination").value;
+    const pkg = document.getElementById("package").value;
     const date = document.getElementById("date").value;
-    const people = document.getElementById("people").value;
+    const persons = document.getElementById("persons").value;
     const msg = document.getElementById("message").value;
 
-    if(!name || !phone || !dest || !date || !people){
-      alert("Please fill all required fields before WhatsApp booking.");
-      return;
-    }
-
-    const text = `Hello Vagabond Escapes,%0A%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0ADestination: ${dest}%0ATravel Date: ${date}%0ATravellers: ${people}%0AMessage: ${msg}`;
-    window.open(`https://wa.me/919773669645?text=${text}`, "_blank");
+    const text = `Hi Vagabond Escapes,%0A%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0APackage: ${pkg}%0ATravel Date: ${date}%0APersons: ${persons}%0AMessage: ${msg}`;
+    window.open(`https://wa.me/919773669645?text=${text}`,'_blank');
   }
 
   function payNow(){
-    const options = {
-      "key": "rzp_test_1234567890", // Replace with your real Razorpay key
-      "amount": 1000 * 100, // Default ₹1000 (can change later)
-      "currency": "INR",
-      "name": "Vagabond Escapes Pvt. Ltd.",
-      "description": "Travel Package Booking",
-      "handler": function (response){
-        alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
-      },
-      "theme": {
-        "color": "#0066ff"
-      }
-    };
-    const rzp = new Razorpay(options);
-    rzp.open();
+    alert("Payment gateway coming via Razorpay. For now please proceed on WhatsApp.");
   }
-
-  document.getElementById("bookingForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    alert("Thank you! Your enquiry has been submitted. Our team will contact you shortly.");
-    this.reset();
-  });
 </script>
 
 </body>
