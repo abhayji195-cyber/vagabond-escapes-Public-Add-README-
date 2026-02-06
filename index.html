@@ -1,578 +1,657 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Vagabond Escapes Pvt. Ltd.</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
-    body{background:#f6f9ff;color:#111;scroll-behavior:smooth}
-    a{text-decoration:none;color:inherit}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Vagabond Escapes | Travel Agency</title>
 
-    /* ================= HEADER ================= */
-    header{
-      background:#fff;
-      padding:14px 40px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      box-shadow:0 2px 15px rgba(0,0,0,.08);
-      position:sticky;
-      top:0;
-      z-index:999;
-    }
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-size:22px;
-      font-weight:800;
-      color:#004cff;
-    }
-    .logo img{height:46px}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    nav a{
-      margin:0 12px;
-      font-weight:600;
-      color:#333;
-      position:relative;
-    }
-    nav a::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:-5px;
-      width:0%;
-      height:2px;
-      background:#004cff;
-      transition:.3s;
-    }
-    nav a:hover::after{width:100%}
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{background:#0f172a;color:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{width:100%;display:block}
 
-    .whatsapp-btn{
-      background:#25D366;
-      color:#fff;
-      padding:10px 18px;
-      border-radius:25px;
-      font-weight:700;
-      font-size:14px;
-    }
+/* ================= HEADER ================= */
+header{
+position:fixed;top:0;left:0;width:100%;
+z-index:999;background:rgba(0,0,0,0.5);
+backdrop-filter:blur(10px);
+}
+.nav{
+max-width:1200px;margin:auto;
+display:flex;align-items:center;
+justify-content:space-between;padding:12px 20px
+}
+.logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px}
+.logo img{height:40px;border-radius:50%}
+nav ul{display:flex;gap:20px;list-style:none}
+nav ul li a:hover{color:#22c55e}
+.whatsapp-top{
+background:#22c55e;padding:7px 14px;border-radius:20px;font-weight:600;font-size:13px
+}
 
-    /* ================= HERO ================= */
-    .hero{
-      min-height:80vh;
-      background:
-        linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
-        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80")
-        center/cover no-repeat;
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:20px;
-    }
-    .hero-content{
-      max-width:800px;
-      animation:fadeUp 1.2s ease;
-    }
-    .hero h1{
-      font-size:46px;
-      margin-bottom:12px;
-      line-height:1.2;
-    }
-    .hero p{
-      font-size:18px;
-      opacity:.95;
-      margin-bottom:20px;
-    }
-    .hero .hero-btn{
-      display:inline-block;
-      background:#ff7a00;
-      color:#fff;
-      padding:12px 22px;
-      border-radius:25px;
-      font-weight:700;
-      margin-top:10px;
-      transition:.3s;
-    }
-    .hero .hero-btn:hover{background:#ff5c00}
+/* ================= HERO ================= */
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("Andaman-Honeymoon1-1.jpg") center/cover no-repeat;
+display:flex;align-items:center;justify-content:center;
+text-align:center;position:relative
+}
+.hero::after{
+content:"";
+position:absolute;top:0;left:0;width:100%;height:100%;
+background:
+url("Dubai.jpeg") right center/40% no-repeat;
+mix-blend-mode:screen;opacity:.25
+}
+.hero-content{
+max-width:900px;padding:20px;z-index:2
+}
+.hero-logo{
+width:140px;margin:0 auto 15px
+}
+.hero h1{
+font-size:48px;font-weight:700;margin-bottom:10px
+}
+.hero p{
+font-size:18px;margin-bottom:20px;opacity:.9
+}
+.hero button{
+background:#22c55e;border:none;color:#fff;
+padding:12px 26px;border-radius:30px;
+font-size:16px;font-weight:600;cursor:pointer;
+transition:.3s
+}
+.hero button:hover{background:#16a34a}
 
-    @keyframes fadeUp{
-      from{opacity:0;transform:translateY(40px)}
-      to{opacity:1;transform:translateY(0)}
-    }
+/* ================= GLASS SECTION ================= */
+.glass{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+border-radius:20px;
+box-shadow:0 10px 40px rgba(0,0,0,.4)
+}
 
-    /* ================= FEATURES ================= */
-    .features{
-      max-width:1150px;
-      margin:-60px auto 50px;
-      background:#fff;
-      border-radius:22px;
-      box-shadow:0 15px 40px rgba(0,0,0,.1);
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      overflow:hidden;
-    }
-    .feature{
-      padding:26px 18px;
-      text-align:center;
-    }
-    .feature h4{
-      margin-bottom:6px;
-      color:#004cff;
-      font-size:18px;
-    }
-    .feature p{font-size:14px;color:#555}
+/* ================= TOP DESTINATIONS ================= */
+.section{
+max-width:1200px;margin:auto;padding:80px 20px
+}
+.section-title{
+text-align:center;margin-bottom:35px
+}
+.section-title h2{
+font-size:34px;font-weight:700;margin-bottom:6px
+}
+.section-title p{opacity:.8}
 
-    /* ================= SECTIONS ================= */
-    .section{
-      max-width:1200px;
-      margin:70px auto;
-      padding:0 20px;
-    }
-    .section h2{
-      text-align:center;
-      margin-bottom:35px;
-      font-size:32px;
-      font-weight:800;
-      position:relative;
-    }
-    .section h2::after{
-      content:"";
-      display:block;
-      width:70px;
-      height:4px;
-      background:#004cff;
-      margin:10px auto 0;
-      border-radius:3px;
-    }
+.dest-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:22px
+}
+.dest-card{
+border-radius:18px;overflow:hidden;
+position:relative;cursor:pointer;
+transition:.4s
+}
+.dest-card:hover{transform:translateY(-8px) scale(1.02)}
+.dest-card img{height:200px;object-fit:cover}
+.dest-overlay{
+position:absolute;bottom:0;left:0;width:100%;
+padding:14px;
+background:linear-gradient(to top,rgba(0,0,0,.8),transparent)
+}
+.dest-overlay h3{font-size:18px;font-weight:600}
+.dest-overlay p{font-size:13px;opacity:.85}
 
-    /* ================= CARDS ================= */
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
-      gap:28px;
-    }
-    .card{
-      background:#fff;
-      border-radius:18px;
-      overflow:hidden;
-      box-shadow:0 12px 30px rgba(0,0,0,.1);
-      transition:.35s;
-      position:relative;
-    }
-    .card::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to top,rgba(0,0,0,.55),transparent 60%);
-      opacity:0;
-      transition:.35s;
-      z-index:1;
-    }
-    .card:hover::before{opacity:1}
-    .card:hover{transform:translateY(-10px) scale(1.01)}
+/* ================= PACKAGES ================= */
+.pack-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px
+}
+.pack-card{
+border-radius:18px;overflow:hidden;
+background:rgba(255,255,255,.06);
+transition:.3s
+}
+.pack-card:hover{transform:translateY(-6px)}
+.pack-card img{height:180px;object-fit:cover}
+.pack-body{padding:16px}
+.pack-body h3{margin-bottom:6px}
+.pack-body .price{
+color:#22c55e;font-weight:700;margin-bottom:10px
+}
+.pack-body button{
+background:#22c55e;border:none;color:#fff;
+padding:8px 14px;border-radius:18px;
+font-weight:600;cursor:pointer
+}
 
-    .card img{
-      width:100%;
-      height:200px;
-      object-fit:cover;
-      display:block;
-    }
-    .card-body{
-      padding:16px;
-      position:relative;
-      z-index:2;
-    }
-    .card-body h3{
-      margin-bottom:6px;
-      font-size:20px;
-    }
-    .price{
-      font-size:14px;
-      margin:3px 0;
-      color:#333;
-    }
-    .hotel{
-      color:#ff6a00;
-      font-weight:700;
-      font-size:13px;
-      margin:6px 0;
-    }
-    .btn{
-      display:inline-block;
-      background:#004cff;
-      color:#fff;
-      padding:8px 15px;
-      border-radius:22px;
-      font-size:13px;
-      font-weight:700;
-      margin-top:8px;
-      transition:.3s;
-    }
-    .btn:hover{background:#0034b5}
+/* ================= ITINERARY MODAL ================= */
+.modal{
+position:fixed;top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,.8);
+display:none;align-items:center;justify-content:center;
+z-index:2000;padding:20px
+}
+.modal-box{
+background:#0b1220;border-radius:20px;
+max-width:700px;width:100%;
+padding:25px;max-height:90vh;overflow-y:auto
+}
+.modal-box h2{
+color:#22c55e;margin-bottom:10px
+}
+.modal-box h4{margin-top:12px}
+.modal-close{
+position:absolute;top:15px;right:20px;
+font-size:24px;cursor:pointer
+}
 
-    /* ================= BOOKING ================= */
-    .booking-box{
-      background:#fff;
-      max-width:950px;
-      margin:80px auto;
-      padding:35px 25px;
-      border-radius:24px;
-      box-shadow:0 18px 45px rgba(0,0,0,.12);
-    }
-    .booking-box h2{
-      text-align:center;
-      margin-bottom:22px;
-      font-size:28px;
-    }
-    form{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-      gap:16px;
-    }
-    input,select,textarea{
-      padding:11px 12px;
-      border-radius:10px;
-      border:1px solid #ccc;
-      font-size:14px;
-      outline:none;
-    }
-    input:focus,select:focus,textarea:focus{
-      border-color:#004cff;
-    }
-    textarea{
-      grid-column:1/-1;
-      resize:none;
-      height:90px;
-    }
-    .form-actions{
-      grid-column:1/-1;
-      text-align:center;
-      margin-top:10px;
-    }
-    .submit-btn{
-      background:#004cff;
-      color:#fff;
-      border:none;
-      padding:11px 20px;
-      border-radius:25px;
-      font-weight:700;
-      cursor:pointer;
-      transition:.3s;
-      margin:5px;
-    }
-    .submit-btn:hover{background:#0034b5}
-    .pay-btn{background:#0f9d58}
-    .pay-btn:hover{background:#0b7d45}
+/* ================= REVIEWS ================= */
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px
+}
+.review-card{
+padding:20px;border-radius:18px;
+background:rgba(255,255,255,.06)
+}
+.review-card p{font-size:14px;opacity:.9;margin-bottom:8px}
+.review-card h4{color:#22c55e}
 
-    /* ================= FOOTER ================= */
-    footer{
-      background:#08142f;
-      color:#fff;
-      padding:50px 20px 30px;
-      margin-top:80px;
-    }
-    .footer-wrap{
-      max-width:1100px;
-      margin:auto;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-      gap:30px;
-    }
-    footer h4{margin-bottom:10px;font-size:17px}
-    footer p,footer a{
-      font-size:14px;
-      color:#cfd6ff;
-      line-height:1.6;
-    }
-    footer a:hover{color:#fff}
+/* ================= BOOKING ================= */
+.booking{
+background:linear-gradient(135deg,#16a34a,#22c55e);
+border-radius:24px;padding:40px 20px;margin-top:60px
+}
+.booking-grid{
+max-width:1000px;margin:auto;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;align-items:center
+}
+.booking-form{
+background:#0b1220;border-radius:18px;
+padding:22px;color:#fff
+}
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+width:100%;padding:10px;border-radius:8px;
+border:none;margin-bottom:10px;font-size:14px
+}
+.booking-form textarea{resize:none;height:70px}
+.booking-form button{
+width:100%;background:#22c55e;
+border:none;color:#fff;padding:10px;
+border-radius:20px;font-weight:600;
+cursor:pointer;margin-bottom:8px
+}
+.booking-form .pay-btn{background:#0d6efd}
 
-    .copyright{
-      text-align:center;
-      margin-top:30px;
-      font-size:13px;
-      color:#aaa;
-    }
+/* ================= FOOTER ================= */
+footer{
+background:#020617;padding:40px 20px;margin-top:70px
+}
+.footer-grid{
+max-width:1200px;margin:auto;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:25px
+}
+footer h3{color:#22c55e;margin-bottom:10px}
+footer p,footer a{font-size:14px;opacity:.85}
+footer a:hover{color:#22c55e}
+.footer-bottom{
+text-align:center;margin-top:20px;font-size:13px;opacity:.6
+}
 
-    @media(max-width:650px){
-      .hero h1{font-size:34px}
-      nav{display:none}
-    }
-  </style>
+/* ================= FLOATING WHATSAPP ================= */
+.float-whatsapp{
+position:fixed;bottom:20px;right:20px;
+background:#22c55e;color:#fff;
+padding:12px 14px;border-radius:50%;
+font-size:22px;z-index:3000;
+box-shadow:0 6px 20px rgba(0,0,0,.4)
+}
+
+@media(max-width:700px){
+.hero h1{font-size:32px}
+.hero p{font-size:15px}
+}
+</style>
 </head>
 <body>
 
 <!-- ================= HEADER ================= -->
 <header>
-  <div class="logo">
-    <img src="logo.png.jpeg" alt="Vagabond Escapes Logo">
-    Vagabond Escapes
+  <div class="nav">
+    <div class="logo">
+      <img src="logo.png.jpeg" alt="Logo">
+      <span>Vagabond Escapes</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#packages">Packages</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#booking">Contact</a></li>
+        <li><a class="whatsapp-top" href="https://wa.me/919773669645" target="_blank">WhatsApp</a></li>
+      </ul>
+    </nav>
   </div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#domestic">Domestic</a>
-    <a href="#international">International</a>
-    <a href="#booking">Booking</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <a class="whatsapp-btn" href="https://wa.me/919773669645?text=Hi%20Vagabond%20Escapes,%20I%20want%20to%20book%20a%20trip." target="_blank">WhatsApp</a>
 </header>
 
 <!-- ================= HERO ================= -->
-<section class="hero" id="home">
+<section class="hero">
   <div class="hero-content">
-    <h1>Luxury Journeys.<br> Seamless Experiences.</h1>
-    <p>Premium domestic & international holiday packages with trusted 3★–4★ hotels and transparent pricing.</p>
-    <a href="#domestic" class="hero-btn">Explore Packages</a>
+    <img src="logo.png.jpeg" class="hero-logo" alt="Vagabond Escapes">
+    <h1>Luxury Journeys. Seamless Experiences.</h1>
+    <p>Handcrafted domestic & international travel packages at unbeatable prices.</p>
+    <button onclick="scrollToBooking()">Plan Your Trip</button>
   </div>
 </section>
 
-<!-- ================= FEATURES ================= -->
-<div class="features">
-  <div class="feature">
-    <h4>3★–4★ Hotels</h4>
-    <p>Verified quality stays</p>
+<!-- ================= TOP DESTINATIONS ================= -->
+<section id="destinations" class="section">
+  <div class="section-title">
+    <h2>Top Destinations</h2>
+    <p>Click any destination to view complete itinerary</p>
   </div>
-  <div class="feature">
-    <h4>100% Customized</h4>
-    <p>Your trip, your way</p>
-  </div>
-  <div class="feature">
-    <h4>24/7 Support</h4>
-    <p>Always available</p>
-  </div>
-  <div class="feature">
-    <h4>Transparent Pricing</h4>
-    <p>No hidden charges</p>
-  </div>
-</div>
 
-<!-- ================= DOMESTIC ================= -->
-<section class="section" id="domestic">
-  <h2>Domestic Packages</h2>
-  <div class="cards">
+  <div class="dest-grid">
 
-    <div class="card">
+    <div class="dest-card glass" onclick="openItinerary('Andaman')">
       <img src="Andaman-Honeymoon1-1.jpg" alt="Andaman">
-      <div class="card-body">
+      <div class="dest-overlay">
         <h3>Andaman</h3>
-        <p class="price">4N/5D – ₹16,000 per person</p>
-        <p class="price">5N/6D – ₹19,000 per person</p>
-        <p class="hotel">3★–4★ Hotels</p>
-        <a class="btn" href="#booking" onclick="setPackage('Andaman')">Book Now</a>
+        <p>Beach • Snorkeling • Honeymoon</p>
       </div>
     </div>
 
-    <div class="card">
+    <div class="dest-card glass" onclick="openItinerary('Kerala')">
       <img src="kerala.jpg" alt="Kerala">
-      <div class="card-body">
+      <div class="dest-overlay">
         <h3>Kerala</h3>
-        <p class="price">4N/5D – ₹16,000 per person</p>
-        <p class="price">5N/6D – ₹19,000 per person</p>
-        <p class="hotel">3★–4★ Hotels</p>
-        <a class="btn" href="#booking" onclick="setPackage('Kerala')">Book Now</a>
+        <p>Backwaters • Nature • Relaxation</p>
       </div>
     </div>
 
-    <div class="card">
+    <div class="dest-card glass" onclick="openItinerary('Manali')">
       <img src="Manali.avif" alt="Manali">
-      <div class="card-body">
+      <div class="dest-overlay">
         <h3>Manali</h3>
-        <p class="price">3N/4D – ₹8,000 per person</p>
-        <p class="price">4N/5D – ₹10,000 per person</p>
-        <p class="hotel">3★–4★ Hotels</p>
-        <a class="btn" href="#booking" onclick="setPackage('Manali')">Book Now</a>
+        <p>Snow • Mountains • Adventure</p>
       </div>
     </div>
 
-    <div class="card">
-      <img src="goa.jpg" alt="Goa">
-      <div class="card-body">
+    <div class="dest-card glass" onclick="openItinerary('Goa')">
+      <img src="Goa.jpeg" alt="Goa">
+      <div class="dest-overlay">
         <h3>Goa</h3>
-        <p class="price">3N/4D – ₹7,000 per person</p>
-        <p class="price">4N/5D – ₹8,500 per person</p>
-        <p class="hotel">3★–4★ Hotels</p>
-        <a class="btn" href="#booking" onclick="setPackage('Goa')">Book Now</a>
+        <p>Beach • Nightlife • Fun</p>
+      </div>
+    </div>
+
+    <div class="dest-card glass" onclick="openItinerary('Dubai')">
+      <img src="Dubai.jpeg" alt="Dubai">
+      <div class="dest-overlay">
+        <h3>Dubai</h3>
+        <p>Luxury • Desert Safari • Shopping</p>
+      </div>
+    </div>
+
+    <div class="dest-card glass" onclick="openItinerary('Thailand')">
+      <img src="Thailand.jpeg" alt="Thailand">
+      <div class="dest-overlay">
+        <h3>Thailand</h3>
+        <p>Islands • Culture • Nightlife</p>
+      </div>
+    </div>
+
+    <div class="dest-card glass" onclick="openItinerary('Bali')">
+      <img src="Bali.jpeg" alt="Bali">
+      <div class="dest-overlay">
+        <h3>Bali</h3>
+        <p>Honeymoon • Beaches • Culture</p>
+      </div>
+    </div>
+
+    <div class="dest-card glass" onclick="openItinerary('Singapore')">
+      <img src="Singapore.webp" alt="Singapore">
+      <div class="dest-overlay">
+        <h3>Singapore</h3>
+        <p>City • Shopping • Theme Parks</p>
+      </div>
+    </div>
+
+    <div class="dest-card glass" onclick="openItinerary('Vietnam')">
+      <img src="vietnam.jpeg" alt="Vietnam">
+      <div class="dest-overlay">
+        <h3>Vietnam</h3>
+        <p>Culture • Nature • Food</p>
+      </div>
+    </div>
+
+    <div class="dest-card glass" onclick="openItinerary('Europe')">
+      <img src="europe.jpeg" alt="Europe">
+      <div class="dest-overlay">
+        <h3>Europe Tour</h3>
+        <p>Multi-Country • Luxury • Culture</p>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- ================= INTERNATIONAL ================= -->
-<section class="section" id="international">
-  <h2>International Packages</h2>
-  <div class="cards">
+<!-- ================= POPULAR PACKAGES ================= -->
+<section id="packages" class="section">
+  <div class="section-title">
+    <h2>Popular Packages</h2>
+    <p>Most loved trips by our travelers</p>
+  </div>
 
-    <div class="card">
-      <img src="Dubai.jpeg" alt="Dubai">
-      <div class="card-body">
-        <h3>Dubai</h3>
-        <p class="price">3N/4D – ₹20,000 per person</p>
-        <p class="price">4N/5D – ₹23,000 per person</p>
-        <p class="hotel">3★–4★ Hotels</p>
-        <a class="btn" href="#booking" onclick="setPackage('Dubai')">Book Now</a>
+  <div class="pack-grid">
+
+    <div class="pack-card glass">
+      <img src="Bali.jpeg" alt="Bali Honeymoon">
+      <div class="pack-body">
+        <h3>Bali Honeymoon</h3>
+        <p>5 Nights / 6 Days</p>
+        <div class="price">₹74,999</div>
+        <button onclick="bookNow('Bali Honeymoon')">Enquire Now</button>
       </div>
     </div>
 
-    <div class="card">
-      <img src="Thailand.jpeg" alt="Thailand Bangkok Pattaya">
-      <div class="card-body">
-        <h3>Thailand (Bangkok + Pattaya)</h3>
-        <p class="price">2N Bangkok + 2N Pattaya – ₹26,500 per person</p>
-        <p class="hotel">3★–4★ Hotels</p>
-        <a class="btn" href="#booking" onclick="setPackage('Thailand Bangkok + Pattaya')">Book Now</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="Thailand.jpeg" alt="Thailand Phuket Krabi">
-      <div class="card-body">
-        <h3>Thailand (Phuket + Krabi)</h3>
-        <p class="price">2N Phuket + 2N Krabi – ₹29,500 per person</p>
-        <p class="hotel">3★–4★ Hotels</p>
-        <a class="btn" href="#booking" onclick="setPackage('Thailand Phuket + Krabi')">Book Now</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="Bali.jpeg" alt="Bali">
-      <div class="card-body">
-        <h3>Bali</h3>
-        <p class="price">4N/5D – ₹19,000 per person</p>
-        <p class="price">5N/6D – ₹21,000 per person</p>
-        <p class="hotel">3★–4★ Hotels</p>
-        <a class="btn" href="#booking" onclick="setPackage('Bali')">Book Now</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="vietnam.jpeg" alt="Vietnam">
-      <div class="card-body">
-        <h3>Vietnam</h3>
-        <p class="price">5N/6D – ₹50,000 per person</p>
-        <p class="price">6N/7D – ₹60,000 per person</p>
-        <p class="hotel">3★–4★ Hotels</p>
-        <a class="btn" href="#booking" onclick="setPackage('Vietnam')">Book Now</a>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="Singapore.webp" alt="Singapore">
-      <div class="card-body">
-        <h3>Singapore</h3>
-        <p class="price">4N/5D – ₹35,000 per person</p>
-        <p class="price">5N/6D – ₹50,000 per person</p>
-        <p class="hotel">3★–4★ Hotels</p>
-        <a class="btn" href="#booking" onclick="setPackage('Singapore')">Book Now</a>
-      </div>
-    </div>
-
-    <div class="card">
+    <div class="pack-card glass">
       <img src="europe.jpeg" alt="Europe Tour">
-      <div class="card-body">
-        <h3>Europe Tour</h3>
-        <p class="price">Starting from ₹95,000 per person</p>
-        <p class="hotel">3★–4★ Hotels</p>
-        <a class="btn" href="#booking" onclick="setPackage('Europe Tour')">Book Now</a>
+      <div class="pack-body">
+        <h3>European Highlights Tour</h3>
+        <p>10 Nights / 11 Days</p>
+        <div class="price">₹2,39,999</div>
+        <button onclick="bookNow('Europe Highlights Tour')">Enquire Now</button>
       </div>
     </div>
 
+    <div class="pack-card glass">
+      <img src="Dubai.jpeg" alt="Dubai Luxury">
+      <div class="pack-body">
+        <h3>Dubai Luxury Getaway</h3>
+        <p>4 Nights / 5 Days</p>
+        <div class="price">₹34,999</div>
+        <button onclick="bookNow('Dubai Luxury Getaway')">Enquire Now</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section id="reviews" class="section">
+  <div class="section-title">
+    <h2>What Our Clients Say ❤️</h2>
+    <p>Trusted by hundreds of happy travelers</p>
+  </div>
+
+  <div class="review-grid">
+    <div class="review-card glass">
+      <p>“Our Bali honeymoon was magical. Hotels, transfers, and activities were perfectly arranged. Highly recommended!”</p>
+      <h4>— Riya Sharma</h4>
+    </div>
+
+    <div class="review-card glass">
+      <p>“Booked Europe tour with Vagabond Escapes. Amazing service, very supportive team and great pricing.”</p>
+      <h4>— Aman Verma</h4>
+    </div>
+
+    <div class="review-card glass">
+      <p>“Dubai trip was smooth and luxury-level. Loved the desert safari and hotel choices.”</p>
+      <h4>— Neha Kapoor</h4>
+    </div>
+
+    <div class="review-card glass">
+      <p>“Kerala backwater experience was peaceful and beautiful. Everything was on-time and well organized.”</p>
+      <h4>— Rohit Malhotra</h4>
+    </div>
   </div>
 </section>
 
 <!-- ================= BOOKING ================= -->
-<section class="booking-box" id="booking">
-  <h2>Book Your Trip</h2>
-  <form id="bookingForm">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <input type="tel" id="phone" placeholder="Phone Number" required>
-    <input type="email" id="email" placeholder="Email Address">
-    <select id="package">
-      <option value="">Select Package</option>
-      <option>Andaman</option>
-      <option>Kerala</option>
-      <option>Manali</option>
-      <option>Goa</option>
-      <option>Dubai</option>
-      <option>Thailand Bangkok + Pattaya</option>
-      <option>Thailand Phuket + Krabi</option>
-      <option>Bali</option>
-      <option>Vietnam</option>
-      <option>Singapore</option>
-      <option>Europe Tour</option>
-    </select>
-    <input type="date" id="date">
-    <input type="number" id="persons" placeholder="No. of Persons">
-    <textarea id="message" placeholder="Any special requirements..."></textarea>
-    <div class="form-actions">
-      <button type="button" class="submit-btn" onclick="sendWhatsApp()">Send on WhatsApp</button>
-      <button type="button" class="submit-btn pay-btn" onclick="payNow()">Pay Now</button>
+<section id="booking" class="section">
+  <div class="booking glass">
+    <div class="booking-grid">
+      <div>
+        <h2 style="margin-bottom:10px">Plan Your Dream Trip ✈️</h2>
+        <p>Fill the form and our travel expert will contact you instantly on WhatsApp.</p>
+        <p style="margin-top:10px;font-size:14px;opacity:.9">✔ Best Prices &nbsp;&nbsp;✔ Custom Itinerary &nbsp;&nbsp;✔ 24/7 Support</p>
+      </div>
+
+      <div class="booking-form">
+        <h3 style="margin-bottom:10px;text-align:center">Quick Enquiry</h3>
+        <form onsubmit="sendBooking(event)">
+          <input type="text" id="name" placeholder="Your Name" required>
+          <input type="tel" id="phone" placeholder="Phone Number" required>
+          <input type="email" id="email" placeholder="Email Address" required>
+
+          <select id="destination" required>
+            <option value="">Select Destination</option>
+            <option>Andaman</option>
+            <option>Kerala</option>
+            <option>Manali</option>
+            <option>Goa</option>
+            <option>Dubai</option>
+            <option>Thailand</option>
+            <option>Bali</option>
+            <option>Singapore</option>
+            <option>Vietnam</option>
+            <option>Europe Tour</option>
+          </select>
+
+          <input type="date" id="traveldate" required>
+          <textarea id="message" placeholder="Any special requirement?"></textarea>
+
+          <button type="submit">Send on WhatsApp</button>
+          <button type="button" class="pay-btn" onclick="payNow()">Pay Now</button>
+        </form>
+      </div>
     </div>
-  </form>
+  </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
-<footer id="contact">
-  <div class="footer-wrap">
+<footer>
+  <div class="footer-grid">
     <div>
-      <h4>Vagabond Escapes Pvt. Ltd.</h4>
-      <p>Email: vagabondescapesinfo@gmail.com</p>
-      <p>Phone: 9773669645, 7524808364, 9999625966</p>
+      <h3>Vagabond Escapes</h3>
+      <p>Your trusted partner for domestic & international holidays. We design memories, not just trips.</p>
     </div>
+
     <div>
-      <h4>Office Address</h4>
-      <p>Nai Bajar, Block A/359, Mahmudabad,<br> Sitapur, Uttar Pradesh – 261203</p>
-      <br>
-      <p>A-135, A Block, Sector 63,<br> Noida, Uttar Pradesh – 201309</p>
+      <h3>Quick Links</h3>
+      <p><a href="#">Home</a></p>
+      <p><a href="#destinations">Destinations</a></p>
+      <p><a href="#packages">Packages</a></p>
+      <p><a href="#reviews">Reviews</a></p>
     </div>
+
     <div>
-      <h4>Quick Links</h4>
-      <p><a href="#home">Home</a></p>
-      <p><a href="#domestic">Domestic Packages</a></p>
-      <p><a href="#international">International Packages</a></p>
-      <p><a href="#booking">Booking</a></p>
+      <h3>Contact</h3>
+      <p>📞 +91 9773669645</p>
+      <p>📞 +91 9999625966</p>
+      <p>📞 +91 7524808364</p>
+      <p>📧 info@vagabondescapes.com</p>
+      <p>📧 vagabondescapesinfo@gmail.com</p>
+      <p>📍 India</p>
     </div>
   </div>
-  <div class="copyright">
-    © 2026 Vagabond Escapes Pvt. Ltd. All Rights Reserved.
+
+  <div class="footer-bottom">
+    © 2026 Vagabond Escapes. All Rights Reserved.
   </div>
 </footer>
 
-<!-- ================= SCRIPT ================= -->
+<!-- ================= FLOATING WHATSAPP ================= -->
+<a class="float-whatsapp" href="https://wa.me/919999999999" target="_blank">💬</a>
+
+<!-- ================= ITINERARY MODAL ================= -->
+<div class="modal" id="itineraryModal">
+  <div class="modal-box glass">
+    <div class="modal-close" onclick="closeModal()">✖</div>
+    <h2 id="modalTitle">Itinerary</h2>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
 <script>
-  function setPackage(name){
-    document.getElementById("package").value = name;
-    location.hash = "booking";
-  }
+function scrollToBooking(){
+  document.getElementById("booking").scrollIntoView({behavior:"smooth"});
+}
 
-  function sendWhatsApp(){
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
-    const email = document.getElementById("email").value;
-    const pkg = document.getElementById("package").value;
-    const date = document.getElementById("date").value;
-    const persons = document.getElementById("persons").value;
-    const msg = document.getElementById("message").value;
+function bookNow(dest){
+  document.getElementById("destination").value = dest;
+  scrollToBooking();
+}
 
-    const text =
-      `Hi Vagabond Escapes,%0A%0A`+
-      `Name: ${name}%0A`+
-      `Phone: ${phone}%0A`+
-      `Email: ${email}%0A`+
-      `Package: ${pkg}%0A`+
-      `Travel Date: ${date}%0A`+
-      `Persons: ${persons}%0A`+
-      `Message: ${msg}`;
+/* ================= WHATSAPP BOOKING ================= */
+function sendBooking(e){
+  e.preventDefault();
+  const name=document.getElementById("name").value;
+  const phone=document.getElementById("phone").value;
+  const email=document.getElementById("email").value;
+  const dest=document.getElementById("destination").value;
+  const date=document.getElementById("traveldate").value;
+  const msg=document.getElementById("message").value;
 
-    window.open(`https://wa.me/919773669645?text=${text}`,'_blank');
-  }
+  const text=`New Travel Enquiry:%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Email: ${email}%0A
+Destination: ${dest}%0A
+Travel Date: ${date}%0A
+Message: ${msg}`;
 
-  function payNow(){
-    alert("Razorpay payment gateway will open here. For now please continue on WhatsApp.");
-  }
+  window.open(`https://wa.me/91977366945?text=${text}`,"_blank");
+}
+
+/* ================= PAYMENT ================= */
+function payNow(){
+  window.open("https://rzp.io/l/demo","_blank");
+}
+
+/* ================= ITINERARIES DATA ================= */
+const itineraries = {
+"Andaman": `
+<h4>5 Days / 4 Nights Andaman Tour</h4>
+<p><strong>Day 1:</strong> Arrival Port Blair – Cellular Jail – Light & Sound Show</p>
+<p><strong>Day 2:</strong> Havelock Island – Radhanagar Beach</p>
+<p><strong>Day 3:</strong> Neil Island – Natural Bridge – Bharatpur Beach</p>
+<p><strong>Day 4:</strong> Port Blair – Ross Island – North Bay</p>
+<p><strong>Day 5:</strong> Departure</p>
+`,
+
+"Kerala": `
+<h4>5 Days / 4 Nights Kerala Tour</h4>
+<p><strong>Day 1:</strong> Arrival Cochin – Munnar Transfer</p>
+<p><strong>Day 2:</strong> Munnar Sightseeing – Tea Gardens – Echo Point</p>
+<p><strong>Day 3:</strong> Munnar to Thekkady – Periyar Wildlife Sanctuary</p>
+<p><strong>Day 4:</strong> Alleppey Houseboat Stay</p>
+<p><strong>Day 5:</strong> Departure</p>
+`,
+
+"Manali": `
+<h4>4 Days / 3 Nights Manali Tour</h4>
+<p><strong>Day 1:</strong> Arrival Manali – Local Sightseeing</p>
+<p><strong>Day 2:</strong> Solang Valley – Snow Activities</p>
+<p><strong>Day 3:</strong> Rohtang Pass / Atal Tunnel</p>
+<p><strong>Day 4:</strong> Departure</p>
+`,
+
+"Goa": `
+<h4>4 Days / 3 Nights Goa Tour</h4>
+<p><strong>Day 1:</strong> Arrival – Beach Leisure</p>
+<p><strong>Day 2:</strong> North Goa – Baga, Calangute, Anjuna</p>
+<p><strong>Day 3:</strong> South Goa – Churches, Miramar Beach</p>
+<p><strong>Day 4:</strong> Departure</p>
+`,
+
+"Dubai": `
+<h4>5 Days / 4 Nights Dubai Tour</h4>
+<p><strong>Day 1:</strong> Arrival – Marina Cruise Dinner</p>
+<p><strong>Day 2:</strong> Dubai City Tour – Burj Khalifa</p>
+<p><strong>Day 3:</strong> Desert Safari with BBQ Dinner</p>
+<p><strong>Day 4:</strong> Abu Dhabi City Tour</p>
+<p><strong>Day 5:</strong> Departure</p>
+`,
+
+"Thailand": `
+<h4>5 Days / 4 Nights Thailand Tour</h4>
+<p><strong>Day 1:</strong> Arrival Bangkok – Transfer Pattaya</p>
+<p><strong>Day 2:</strong> Coral Island Tour</p>
+<p><strong>Day 3:</strong> Pattaya to Bangkok – City Tour</p>
+<p><strong>Day 4:</strong> Safari World & Marine Park</p>
+<p><strong>Day 5:</strong> Departure</p>
+`,
+
+"Bali": `
+<h4>6 Days / 5 Nights Bali Tour</h4>
+<p><strong>Day 1:</strong> Arrival – Leisure</p>
+<p><strong>Day 2:</strong> Ubud – Tegenungan Waterfall – Monkey Forest</p>
+<p><strong>Day 3:</strong> Tanah Lot – Ulun Danu Temple</p>
+<p><strong>Day 4:</strong> Nusa Penida Island Tour</p>
+<p><strong>Day 5:</strong> Beach Leisure</p>
+<p><strong>Day 6:</strong> Departure</p>
+`,
+
+"Singapore": `
+<h4>4 Days / 3 Nights Singapore Tour</h4>
+<p><strong>Day 1:</strong> Arrival – Night Safari</p>
+<p><strong>Day 2:</strong> City Tour – Marina Bay – Gardens by the Bay</p>
+<p><strong>Day 3:</strong> Sentosa Island – Universal Studios</p>
+<p><strong>Day 4:</strong> Departure</p>
+`,
+
+"Vietnam": `
+<h4>6 Days / 5 Nights Vietnam Tour</h4>
+<p><strong>Day 1:</strong> Arrival Hanoi – City Tour</p>
+<p><strong>Day 2:</strong> Halong Bay Cruise</p>
+<p><strong>Day 3:</strong> Hanoi to Da Nang – Transfer Hoi An</p>
+<p><strong>Day 4:</strong> Bana Hills – Golden Bridge</p>
+<p><strong>Day 5:</strong> Ho Chi Minh City Tour</p>
+<p><strong>Day 6:</strong> Departure</p>
+`,
+
+"Europe": `
+<h4>12 Days / 11 Nights Europe Tour</h4>
+<p><strong>Day 1:</strong> Arrival Paris – Eiffel Tower Visit</p>
+<p><strong>Day 2:</strong> Paris City Tour – Seine Cruise</p>
+<p><strong>Day 3:</strong> Brussels – Amsterdam</p>
+<p><strong>Day 4:</strong> Amsterdam Canal Cruise</p>
+<p><strong>Day 5:</strong> Rhine Falls – Switzerland</p>
+<p><strong>Day 6:</strong> Mt. Titlis – Lucerne</p>
+<p><strong>Day 7:</strong> Innsbruck – Swarovski Museum</p>
+<p><strong>Day 8:</strong> Venice Gondola Ride</p>
+<p><strong>Day 9:</strong> Rome – Vatican City</p>
+<p><strong>Day 10:</strong> Pisa – Florence</p>
+<p><strong>Day 11:</strong> Leisure Day</p>
+<p><strong>Day 12:</strong> Departure</p>
+`
+};
+
+/* ================= ITINERARY MODAL ================= */
+function openItinerary(dest){
+  document.getElementById("modalTitle").innerText = dest + " Itinerary";
+  document.getElementById("modalContent").innerHTML = itineraries[dest];
+  document.getElementById("itineraryModal").style.display = "flex";
+}
+function closeModal(){
+  document.getElementById("itineraryModal").style.display = "none";
+}
 </script>
 
 </body>
