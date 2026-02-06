@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Vagabond Escapes | Travel Agency</title>
+<title>Vagabond Escapes Pvt. Ltd.</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-body{background:#0f172a;color:#fff;overflow-x:hidden}
+body{background:#0b1220;color:#fff;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
 img{width:100%;display:block}
 
@@ -25,7 +25,7 @@ display:flex;align-items:center;
 justify-content:space-between;padding:12px 20px
 }
 .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px}
-.logo img{height:40px;border-radius:50%}
+.logo img{height:42px;border-radius:50%}
 nav ul{display:flex;gap:20px;list-style:none}
 nav ul li a:hover{color:#22c55e}
 .whatsapp-top{
@@ -44,15 +44,14 @@ text-align:center;position:relative
 .hero::after{
 content:"";
 position:absolute;top:0;left:0;width:100%;height:100%;
-background:
-url("Dubai.jpeg") right center/40% no-repeat;
+background:url("Dubai.jpeg") right center/40% no-repeat;
 mix-blend-mode:screen;opacity:.25
 }
 .hero-content{
 max-width:900px;padding:20px;z-index:2
 }
 .hero-logo{
-width:140px;margin:0 auto 15px
+width:150px;margin:0 auto 15px
 }
 .hero h1{
 font-size:48px;font-weight:700;margin-bottom:10px
@@ -62,13 +61,13 @@ font-size:18px;margin-bottom:20px;opacity:.9
 }
 .hero button{
 background:#22c55e;border:none;color:#fff;
-padding:12px 26px;border-radius:30px;
+padding:12px 28px;border-radius:30px;
 font-size:16px;font-weight:600;cursor:pointer;
 transition:.3s
 }
 .hero button:hover{background:#16a34a}
 
-/* ================= GLASS SECTION ================= */
+/* ================= GLASS ================= */
 .glass{
 background:rgba(255,255,255,.08);
 backdrop-filter:blur(12px);
@@ -76,7 +75,7 @@ border-radius:20px;
 box-shadow:0 10px 40px rgba(0,0,0,.4)
 }
 
-/* ================= TOP DESTINATIONS ================= */
+/* ================= SECTION ================= */
 .section{
 max-width:1200px;margin:auto;padding:80px 20px
 }
@@ -88,9 +87,10 @@ font-size:34px;font-weight:700;margin-bottom:6px
 }
 .section-title p{opacity:.8}
 
+/* ================= DESTINATIONS ================= */
 .dest-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:22px
 }
 .dest-card{
@@ -99,7 +99,7 @@ position:relative;cursor:pointer;
 transition:.4s
 }
 .dest-card:hover{transform:translateY(-8px) scale(1.02)}
-.dest-card img{height:200px;object-fit:cover}
+.dest-card img{height:210px;object-fit:cover}
 .dest-overlay{
 position:absolute;bottom:0;left:0;width:100%;
 padding:14px;
@@ -124,15 +124,16 @@ transition:.3s
 .pack-body{padding:16px}
 .pack-body h3{margin-bottom:6px}
 .pack-body .price{
-color:#22c55e;font-weight:700;margin-bottom:10px
+color:#22c55e;font-weight:700;margin-bottom:6px
 }
+.pack-body p{font-size:13px;opacity:.9;margin-bottom:10px}
 .pack-body button{
 background:#22c55e;border:none;color:#fff;
 padding:8px 14px;border-radius:18px;
 font-weight:600;cursor:pointer
 }
 
-/* ================= ITINERARY MODAL ================= */
+/* ================= MODAL ================= */
 .modal{
 position:fixed;top:0;left:0;width:100%;height:100%;
 background:rgba(0,0,0,.8);
@@ -141,8 +142,9 @@ z-index:2000;padding:20px
 }
 .modal-box{
 background:#0b1220;border-radius:20px;
-max-width:700px;width:100%;
-padding:25px;max-height:90vh;overflow-y:auto
+max-width:750px;width:100%;
+padding:25px;max-height:90vh;overflow-y:auto;
+position:relative
 }
 .modal-box h2{
 color:#22c55e;margin-bottom:10px
@@ -152,6 +154,8 @@ color:#22c55e;margin-bottom:10px
 position:absolute;top:15px;right:20px;
 font-size:24px;cursor:pointer
 }
+.modal-box ul{padding-left:18px}
+.modal-box li{margin-bottom:6px;font-size:14px}
 
 /* ================= REVIEWS ================= */
 .review-grid{
@@ -233,7 +237,7 @@ box-shadow:0 6px 20px rgba(0,0,0,.4)
   <div class="nav">
     <div class="logo">
       <img src="logo.png.jpeg" alt="Logo">
-      <span>Vagabond Escapes</span>
+      <span>Vagabond Escapes Pvt. Ltd.</span>
     </div>
     <nav>
       <ul>
@@ -252,17 +256,17 @@ box-shadow:0 6px 20px rgba(0,0,0,.4)
 <section class="hero">
   <div class="hero-content">
     <img src="logo.png.jpeg" class="hero-logo" alt="Vagabond Escapes">
-    <h1>Luxury Journeys. Seamless Experiences.</h1>
-    <p>Handcrafted domestic & international travel packages at unbeatable prices.</p>
+    <h1>Travel Beyond Boundaries ✈️</h1>
+    <p>Domestic & International Holiday Packages with Best Prices, Trusted Service & Luxury Experience.</p>
     <button onclick="scrollToBooking()">Plan Your Trip</button>
   </div>
 </section>
 
-<!-- ================= TOP DESTINATIONS ================= -->
+<!-- ================= DESTINATIONS ================= -->
 <section id="destinations" class="section">
   <div class="section-title">
     <h2>Top Destinations</h2>
-    <p>Click any destination to view complete itinerary</p>
+    <p>Click any destination to view packages & full itinerary</p>
   </div>
 
   <div class="dest-grid">
@@ -271,7 +275,7 @@ box-shadow:0 6px 20px rgba(0,0,0,.4)
       <img src="Andaman-Honeymoon1-1.jpg" alt="Andaman">
       <div class="dest-overlay">
         <h3>Andaman</h3>
-        <p>Beach • Snorkeling • Honeymoon</p>
+        <p>Beaches • Snorkeling • Honeymoon</p>
       </div>
     </div>
 
@@ -323,19 +327,19 @@ box-shadow:0 6px 20px rgba(0,0,0,.4)
       </div>
     </div>
 
-    <div class="dest-card glass" onclick="openItinerary('Singapore')">
-      <img src="Singapore.webp" alt="Singapore">
-      <div class="dest-overlay">
-        <h3>Singapore</h3>
-        <p>City • Shopping • Theme Parks</p>
-      </div>
-    </div>
-
     <div class="dest-card glass" onclick="openItinerary('Vietnam')">
       <img src="vietnam.jpeg" alt="Vietnam">
       <div class="dest-overlay">
         <h3>Vietnam</h3>
         <p>Culture • Nature • Food</p>
+      </div>
+    </div>
+
+    <div class="dest-card glass" onclick="openItinerary('Singapore')">
+      <img src="Singapore.webp" alt="Singapore">
+      <div class="dest-overlay">
+        <h3>Singapore</h3>
+        <p>City • Shopping • Theme Parks</p>
       </div>
     </div>
 
@@ -350,42 +354,112 @@ box-shadow:0 6px 20px rgba(0,0,0,.4)
   </div>
 </section>
 
-<!-- ================= POPULAR PACKAGES ================= -->
+<!-- ================= PACKAGES ================= -->
 <section id="packages" class="section">
   <div class="section-title">
-    <h2>Popular Packages</h2>
-    <p>Most loved trips by our travelers</p>
+    <h2>Best Selling Packages</h2>
+    <p>3★ & 4★ Hotels | Airport Transfers | Sightseeing Included</p>
   </div>
 
   <div class="pack-grid">
 
     <div class="pack-card glass">
-      <img src="Bali.jpeg" alt="Bali Honeymoon">
+      <img src="Andaman-Honeymoon1-1.jpg" alt="Andaman">
       <div class="pack-body">
-        <h3>Bali Honeymoon</h3>
-        <p>5 Nights / 6 Days</p>
-        <div class="price">₹74,999</div>
-        <button onclick="bookNow('Bali Honeymoon')">Enquire Now</button>
+        <h3>Andaman Holiday</h3>
+        <p>4N/5D → ₹16,000 | 5N/6D → ₹19,000</p>
+        <div class="price">3★ / 4★ Hotels</div>
+        <button onclick="bookNow('Andaman')">Enquire Now</button>
       </div>
     </div>
 
     <div class="pack-card glass">
-      <img src="europe.jpeg" alt="Europe Tour">
+      <img src="kerala.jpg" alt="Kerala">
       <div class="pack-body">
-        <h3>European Highlights Tour</h3>
-        <p>10 Nights / 11 Days</p>
-        <div class="price">₹2,39,999</div>
-        <button onclick="bookNow('Europe Highlights Tour')">Enquire Now</button>
+        <h3>Kerala Escape</h3>
+        <p>4N/5D → ₹16,000 | 5N/6D → ₹19,000</p>
+        <div class="price">3★ / 4★ Hotels</div>
+        <button onclick="bookNow('Kerala')">Enquire Now</button>
       </div>
     </div>
 
     <div class="pack-card glass">
-      <img src="Dubai.jpeg" alt="Dubai Luxury">
+      <img src="Manali.avif" alt="Manali">
       <div class="pack-body">
-        <h3>Dubai Luxury Getaway</h3>
-        <p>4 Nights / 5 Days</p>
-        <div class="price">₹34,999</div>
-        <button onclick="bookNow('Dubai Luxury Getaway')">Enquire Now</button>
+        <h3>Manali Snow Trip</h3>
+        <p>3N/4D → ₹8,000 | 4N/5D → ₹10,000</p>
+        <div class="price">3★ / 4★ Hotels</div>
+        <button onclick="bookNow('Manali')">Enquire Now</button>
+      </div>
+    </div>
+
+    <div class="pack-card glass">
+      <img src="Goa.jpeg" alt="Goa">
+      <div class="pack-body">
+        <h3>Goa Beach Holiday</h3>
+        <p>3N/4D → ₹7,000 | 4N/5D → ₹8,500</p>
+        <div class="price">3★ / 4★ Hotels</div>
+        <button onclick="bookNow('Goa')">Enquire Now</button>
+      </div>
+    </div>
+
+    <div class="pack-card glass">
+      <img src="Dubai.jpeg" alt="Dubai">
+      <div class="pack-body">
+        <h3>Dubai Getaway</h3>
+        <p>3N/4D → ₹20,000 | 4N/5D → ₹23,000</p>
+        <div class="price">3★ / 4★ Hotels</div>
+        <button onclick="bookNow('Dubai')">Enquire Now</button>
+      </div>
+    </div>
+
+    <div class="pack-card glass">
+      <img src="Thailand.jpeg" alt="Thailand">
+      <div class="pack-body">
+        <h3>Thailand Combo</h3>
+        <p>Bangkok 2N + Pattaya 2N → ₹26,500</p>
+        <div class="price">3★ / 4★ Hotels</div>
+        <button onclick="bookNow('Thailand')">Enquire Now</button>
+      </div>
+    </div>
+
+    <div class="pack-card glass">
+      <img src="Bali.jpeg" alt="Bali">
+      <div class="pack-body">
+        <h3>Bali Romantic Tour</h3>
+        <p>4N/5D → ₹19,000 | 5N/6D → ₹21,000</p>
+        <div class="price">3★ / 4★ Hotels</div>
+        <button onclick="bookNow('Bali')">Enquire Now</button>
+      </div>
+    </div>
+
+    <div class="pack-card glass">
+      <img src="vietnam.jpeg" alt="Vietnam">
+      <div class="pack-body">
+        <h3>Vietnam Discovery</h3>
+        <p>5N/6D → ₹50,000 | 6N/7D → ₹60,000</p>
+        <div class="price">3★ / 4★ Hotels</div>
+        <button onclick="bookNow('Vietnam')">Enquire Now</button>
+      </div>
+    </div>
+
+    <div class="pack-card glass">
+      <img src="Singapore.webp" alt="Singapore">
+      <div class="pack-body">
+        <h3>Singapore City Tour</h3>
+        <p>4N/5D → ₹35,000 | 5N/6D → ₹50,000</p>
+        <div class="price">3★ / 4★ Hotels</div>
+        <button onclick="bookNow('Singapore')">Enquire Now</button>
+      </div>
+    </div>
+
+    <div class="pack-card glass">
+      <img src="europe.jpeg" alt="Europe">
+      <div class="pack-body">
+        <h3>Europe Grand Tour</h3>
+        <p>10N/11D → ₹2,39,999 | 12N/13D → ₹2,89,999</p>
+        <div class="price">3★ / 4★ Hotels</div>
+        <button onclick="bookNow('Europe')">Enquire Now</button>
       </div>
     </div>
 
@@ -395,29 +469,39 @@ box-shadow:0 6px 20px rgba(0,0,0,.4)
 <!-- ================= REVIEWS ================= -->
 <section id="reviews" class="section">
   <div class="section-title">
-    <h2>What Our Clients Say ❤️</h2>
+    <h2>Customer Reviews ❤️</h2>
     <p>Trusted by hundreds of happy travelers</p>
   </div>
 
   <div class="review-grid">
     <div class="review-card glass">
-      <p>“Our Bali honeymoon was magical. Hotels, transfers, and activities were perfectly arranged. Highly recommended!”</p>
+      <p>“Booked Andaman honeymoon with Vagabond Escapes. Everything was perfectly managed. Hotels, transfers & sightseeing were excellent.”</p>
       <h4>— Riya Sharma</h4>
     </div>
 
     <div class="review-card glass">
-      <p>“Booked Europe tour with Vagabond Escapes. Amazing service, very supportive team and great pricing.”</p>
+      <p>“Our Dubai trip was luxury-level. Great support team and very affordable pricing compared to other agencies.”</p>
       <h4>— Aman Verma</h4>
     </div>
 
     <div class="review-card glass">
-      <p>“Dubai trip was smooth and luxury-level. Loved the desert safari and hotel choices.”</p>
+      <p>“Kerala houseboat experience was magical. Highly recommend Vagabond Escapes for family tours.”</p>
       <h4>— Neha Kapoor</h4>
     </div>
 
     <div class="review-card glass">
-      <p>“Kerala backwater experience was peaceful and beautiful. Everything was on-time and well organized.”</p>
+      <p>“Booked Thailand Bangkok-Pattaya tour. Smooth service, great hotels and timely coordination.”</p>
       <h4>— Rohit Malhotra</h4>
+    </div>
+
+    <div class="review-card glass">
+      <p>“Europe tour was unforgettable. Amazing itinerary and professional handling. Will book again.”</p>
+      <h4>— Simran Kaur</h4>
+    </div>
+
+    <div class="review-card glass">
+      <p>“Best travel agency experience so far. Fast response, good pricing and excellent trip planning.”</p>
+      <h4>— Arjun Singh</h4>
     </div>
   </div>
 </section>
@@ -427,9 +511,14 @@ box-shadow:0 6px 20px rgba(0,0,0,.4)
   <div class="booking glass">
     <div class="booking-grid">
       <div>
-        <h2 style="margin-bottom:10px">Plan Your Dream Trip ✈️</h2>
-        <p>Fill the form and our travel expert will contact you instantly on WhatsApp.</p>
-        <p style="margin-top:10px;font-size:14px;opacity:.9">✔ Best Prices &nbsp;&nbsp;✔ Custom Itinerary &nbsp;&nbsp;✔ 24/7 Support</p>
+        <h2 style="margin-bottom:10px">Plan Your Dream Holiday ✈️</h2>
+        <p>Fill the form & our travel expert will contact you instantly on WhatsApp.</p>
+        <p style="margin-top:10px;font-size:14px;opacity:.9">
+          ✔ Best Price Guarantee <br>
+          ✔ 3★ & 4★ Hotels <br>
+          ✔ Custom Itinerary <br>
+          ✔ 24/7 Support
+        </p>
       </div>
 
       <div class="booking-form">
@@ -448,9 +537,9 @@ box-shadow:0 6px 20px rgba(0,0,0,.4)
             <option>Dubai</option>
             <option>Thailand</option>
             <option>Bali</option>
-            <option>Singapore</option>
             <option>Vietnam</option>
-            <option>Europe Tour</option>
+            <option>Singapore</option>
+            <option>Europe</option>
           </select>
 
           <input type="date" id="traveldate" required>
@@ -468,8 +557,16 @@ box-shadow:0 6px 20px rgba(0,0,0,.4)
 <footer>
   <div class="footer-grid">
     <div>
-      <h3>Vagabond Escapes</h3>
+      <h3>Vagabond Escapes Pvt. Ltd.</h3>
       <p>Your trusted partner for domestic & international holidays. We design memories, not just trips.</p>
+    </div>
+
+    <div>
+      <h3>Contact</h3>
+      <p>📞 9773669645 | 7524808364 | 9999625966</p>
+      <p>📧 vagabondescapesinfo@gmail.com</p>
+      <p>📍 Nai Bajar, Block A/359, Mahmudabad, Sitapur, UP 261203</p>
+      <p>📍 A-135, A Block, Sector 63, Noida, UP 201309</p>
     </div>
 
     <div>
@@ -478,26 +575,17 @@ box-shadow:0 6px 20px rgba(0,0,0,.4)
       <p><a href="#destinations">Destinations</a></p>
       <p><a href="#packages">Packages</a></p>
       <p><a href="#reviews">Reviews</a></p>
-    </div>
-
-    <div>
-      <h3>Contact</h3>
-      <p>📞 +91 9773669645</p>
-      <p>📞 +91 9999625966</p>
-      <p>📞 +91 7524808364</p>
-      <p>📧 info@vagabondescapes.com</p>
-      <p>📧 vagabondescapesinfo@gmail.com</p>
-      <p>📍 India</p>
+      <p><a href="#booking">Contact</a></p>
     </div>
   </div>
 
   <div class="footer-bottom">
-    © 2026 Vagabond Escapes. All Rights Reserved.
+    © 2026 Vagabond Escapes Pvt. Ltd. All Rights Reserved.
   </div>
 </footer>
 
 <!-- ================= FLOATING WHATSAPP ================= -->
-<a class="float-whatsapp" href="https://wa.me/919999999999" target="_blank">💬</a>
+<a class="float-whatsapp" href="https://wa.me/919773669645" target="_blank">💬</a>
 
 <!-- ================= ITINERARY MODAL ================= -->
 <div class="modal" id="itineraryModal">
@@ -528,7 +616,7 @@ function sendBooking(e){
   const date=document.getElementById("traveldate").value;
   const msg=document.getElementById("message").value;
 
-  const text=`New Travel Enquiry:%0A
+  const text=`New Travel Enquiry - Vagabond Escapes:%0A
 Name: ${name}%0A
 Phone: ${phone}%0A
 Email: ${email}%0A
@@ -536,7 +624,7 @@ Destination: ${dest}%0A
 Travel Date: ${date}%0A
 Message: ${msg}`;
 
-  window.open(`https://wa.me/91977366945?text=${text}`,"_blank");
+  window.open(`https://wa.me/919773669645?text=${text}`,"_blank");
 }
 
 /* ================= PAYMENT ================= */
@@ -544,108 +632,208 @@ function payNow(){
   window.open("https://rzp.io/l/demo","_blank");
 }
 
-/* ================= ITINERARIES DATA ================= */
+/* ================= ITINERARIES ================= */
 const itineraries = {
+
 "Andaman": `
-<h4>5 Days / 4 Nights Andaman Tour</h4>
-<p><strong>Day 1:</strong> Arrival Port Blair – Cellular Jail – Light & Sound Show</p>
-<p><strong>Day 2:</strong> Havelock Island – Radhanagar Beach</p>
-<p><strong>Day 3:</strong> Neil Island – Natural Bridge – Bharatpur Beach</p>
-<p><strong>Day 4:</strong> Port Blair – Ross Island – North Bay</p>
-<p><strong>Day 5:</strong> Departure</p>
+<h4>Andaman Holiday Packages (3★ & 4★ Hotels)</h4>
+<ul>
+<li><strong>4 Nights / 5 Days – ₹16,000 per person</strong></li>
+<li><strong>5 Nights / 6 Days – ₹19,000 per person</strong></li>
+</ul>
+
+<h4>Sample Itinerary</h4>
+<ul>
+<li><strong>Day 1:</strong> Arrival Port Blair – Cellular Jail – Light & Sound Show</li>
+<li><strong>Day 2:</strong> Havelock Island – Radhanagar Beach</li>
+<li><strong>Day 3:</strong> Neil Island – Natural Bridge – Bharatpur Beach</li>
+<li><strong>Day 4:</strong> Ross Island – North Bay – Water Activities</li>
+<li><strong>Day 5:</strong> Departure</li>
+</ul>
+
+<p>✔ Airport Transfers ✔ Breakfast ✔ Sightseeing ✔ 24/7 Support</p>
 `,
 
 "Kerala": `
-<h4>5 Days / 4 Nights Kerala Tour</h4>
-<p><strong>Day 1:</strong> Arrival Cochin – Munnar Transfer</p>
-<p><strong>Day 2:</strong> Munnar Sightseeing – Tea Gardens – Echo Point</p>
-<p><strong>Day 3:</strong> Munnar to Thekkady – Periyar Wildlife Sanctuary</p>
-<p><strong>Day 4:</strong> Alleppey Houseboat Stay</p>
-<p><strong>Day 5:</strong> Departure</p>
+<h4>Kerala Holiday Packages (3★ & 4★ Hotels)</h4>
+<ul>
+<li><strong>4 Nights / 5 Days – ₹16,000 per person</strong></li>
+<li><strong>5 Nights / 6 Days – ₹19,000 per person</strong></li>
+</ul>
+
+<h4>Sample Itinerary</h4>
+<ul>
+<li><strong>Day 1:</strong> Arrival Cochin – Transfer to Munnar</li>
+<li><strong>Day 2:</strong> Munnar Sightseeing – Tea Gardens – Echo Point</li>
+<li><strong>Day 3:</strong> Munnar to Thekkady – Periyar Wildlife Sanctuary</li>
+<li><strong>Day 4:</strong> Alleppey Houseboat Stay</li>
+<li><strong>Day 5:</strong> Departure</li>
+</ul>
+
+<p>✔ Airport Transfers ✔ Breakfast ✔ Houseboat Stay ✔ Sightseeing</p>
 `,
 
 "Manali": `
-<h4>4 Days / 3 Nights Manali Tour</h4>
-<p><strong>Day 1:</strong> Arrival Manali – Local Sightseeing</p>
-<p><strong>Day 2:</strong> Solang Valley – Snow Activities</p>
-<p><strong>Day 3:</strong> Rohtang Pass / Atal Tunnel</p>
-<p><strong>Day 4:</strong> Departure</p>
+<h4>Manali Tour Packages (3★ & 4★ Hotels)</h4>
+<ul>
+<li><strong>3 Nights / 4 Days – ₹8,000 per person</strong></li>
+<li><strong>4 Nights / 5 Days – ₹10,000 per person</strong></li>
+</ul>
+
+<h4>Sample Itinerary</h4>
+<ul>
+<li><strong>Day 1:</strong> Arrival Manali – Local Sightseeing</li>
+<li><strong>Day 2:</strong> Solang Valley – Snow Activities</li>
+<li><strong>Day 3:</strong> Atal Tunnel – Rohtang Pass</li>
+<li><strong>Day 4:</strong> Departure</li>
+</ul>
+
+<p>✔ Breakfast ✔ Transfers ✔ Sightseeing ✔ Mountain Views</p>
 `,
 
 "Goa": `
-<h4>4 Days / 3 Nights Goa Tour</h4>
-<p><strong>Day 1:</strong> Arrival – Beach Leisure</p>
-<p><strong>Day 2:</strong> North Goa – Baga, Calangute, Anjuna</p>
-<p><strong>Day 3:</strong> South Goa – Churches, Miramar Beach</p>
-<p><strong>Day 4:</strong> Departure</p>
+<h4>Goa Holiday Packages (3★ & 4★ Hotels)</h4>
+<ul>
+<li><strong>3 Nights / 4 Days – ₹7,000 per person</strong></li>
+<li><strong>4 Nights / 5 Days – ₹8,500 per person</strong></li>
+</ul>
+
+<h4>Sample Itinerary</h4>
+<ul>
+<li><strong>Day 1:</strong> Arrival – Leisure at Beach</li>
+<li><strong>Day 2:</strong> North Goa – Baga, Calangute, Anjuna</li>
+<li><strong>Day 3:</strong> South Goa – Churches, Miramar Beach</li>
+<li><strong>Day 4:</strong> Departure</li>
+</ul>
+
+<p>✔ Breakfast ✔ Transfers ✔ Sightseeing ✔ Beach Stay</p>
 `,
 
 "Dubai": `
-<h4>5 Days / 4 Nights Dubai Tour</h4>
-<p><strong>Day 1:</strong> Arrival – Marina Cruise Dinner</p>
-<p><strong>Day 2:</strong> Dubai City Tour – Burj Khalifa</p>
-<p><strong>Day 3:</strong> Desert Safari with BBQ Dinner</p>
-<p><strong>Day 4:</strong> Abu Dhabi City Tour</p>
-<p><strong>Day 5:</strong> Departure</p>
+<h4>Dubai Holiday Packages (3★ & 4★ Hotels)</h4>
+<ul>
+<li><strong>3 Nights / 4 Days – ₹20,000 per person</strong></li>
+<li><strong>4 Nights / 5 Days – ₹23,000 per person</strong></li>
+</ul>
+
+<h4>Sample Itinerary</h4>
+<ul>
+<li><strong>Day 1:</strong> Arrival – Marina Cruise Dinner</li>
+<li><strong>Day 2:</strong> Dubai City Tour – Burj Khalifa</li>
+<li><strong>Day 3:</strong> Desert Safari with BBQ Dinner</li>
+<li><strong>Day 4:</strong> Departure</li>
+</ul>
+
+<p>✔ Airport Transfers ✔ Breakfast ✔ Sightseeing ✔ Visa Assistance</p>
 `,
 
 "Thailand": `
-<h4>5 Days / 4 Nights Thailand Tour</h4>
-<p><strong>Day 1:</strong> Arrival Bangkok – Transfer Pattaya</p>
-<p><strong>Day 2:</strong> Coral Island Tour</p>
-<p><strong>Day 3:</strong> Pattaya to Bangkok – City Tour</p>
-<p><strong>Day 4:</strong> Safari World & Marine Park</p>
-<p><strong>Day 5:</strong> Departure</p>
+<h4>Thailand Holiday Packages (3★ & 4★ Hotels)</h4>
+<ul>
+<li><strong>Bangkok 2 Nights + Pattaya 2 Nights – ₹26,500 per person</strong></li>
+<li><strong>Phuket 2 Nights + Krabi 2 Nights – ₹29,500 per person</strong></li>
+</ul>
+
+<h4>Sample Itinerary (Bangkok + Pattaya)</h4>
+<ul>
+<li><strong>Day 1:</strong> Arrival Bangkok – Transfer Pattaya</li>
+<li><strong>Day 2:</strong> Coral Island Tour</li>
+<li><strong>Day 3:</strong> Pattaya to Bangkok – City Tour</li>
+<li><strong>Day 4:</strong> Safari World & Marine Park</li>
+<li><strong>Day 5:</strong> Departure</li>
+</ul>
+
+<p>✔ Airport Transfers ✔ Breakfast ✔ Sightseeing ✔ Island Tour</p>
 `,
 
 "Bali": `
-<h4>6 Days / 5 Nights Bali Tour</h4>
-<p><strong>Day 1:</strong> Arrival – Leisure</p>
-<p><strong>Day 2:</strong> Ubud – Tegenungan Waterfall – Monkey Forest</p>
-<p><strong>Day 3:</strong> Tanah Lot – Ulun Danu Temple</p>
-<p><strong>Day 4:</strong> Nusa Penida Island Tour</p>
-<p><strong>Day 5:</strong> Beach Leisure</p>
-<p><strong>Day 6:</strong> Departure</p>
-`,
+<h4>Bali Holiday Packages (3★ & 4★ Hotels)</h4>
+<ul>
+<li><strong>4 Nights / 5 Days – ₹19,000 per person</strong></li>
+<li><strong>5 Nights / 6 Days – ₹21,000 per person</strong></li>
+</ul>
 
-"Singapore": `
-<h4>4 Days / 3 Nights Singapore Tour</h4>
-<p><strong>Day 1:</strong> Arrival – Night Safari</p>
-<p><strong>Day 2:</strong> City Tour – Marina Bay – Gardens by the Bay</p>
-<p><strong>Day 3:</strong> Sentosa Island – Universal Studios</p>
-<p><strong>Day 4:</strong> Departure</p>
+<h4>Sample Itinerary</h4>
+<ul>
+<li><strong>Day 1:</strong> Arrival – Leisure</li>
+<li><strong>Day 2:</strong> Ubud – Tegenungan Waterfall – Monkey Forest</li>
+<li><strong>Day 3:</strong> Tanah Lot – Ulun Danu Temple</li>
+<li><strong>Day 4:</strong> Nusa Penida Island Tour</li>
+<li><strong>Day 5:</strong> Beach Leisure – Departure</li>
+</ul>
+
+<p>✔ Airport Transfers ✔ Breakfast ✔ Sightseeing ✔ Honeymoon Specials</p>
 `,
 
 "Vietnam": `
-<h4>6 Days / 5 Nights Vietnam Tour</h4>
-<p><strong>Day 1:</strong> Arrival Hanoi – City Tour</p>
-<p><strong>Day 2:</strong> Halong Bay Cruise</p>
-<p><strong>Day 3:</strong> Hanoi to Da Nang – Transfer Hoi An</p>
-<p><strong>Day 4:</strong> Bana Hills – Golden Bridge</p>
-<p><strong>Day 5:</strong> Ho Chi Minh City Tour</p>
-<p><strong>Day 6:</strong> Departure</p>
+<h4>Vietnam Holiday Packages (3★ & 4★ Hotels)</h4>
+<ul>
+<li><strong>5 Nights / 6 Days – ₹50,000 per person</strong></li>
+<li><strong>6 Nights / 7 Days – ₹60,000 per person</strong></li>
+</ul>
+
+<h4>Sample Itinerary</h4>
+<ul>
+<li><strong>Day 1:</strong> Arrival Hanoi – City Tour</li>
+<li><strong>Day 2:</strong> Halong Bay Cruise</li>
+<li><strong>Day 3:</strong> Hanoi to Da Nang – Hoi An Transfer</li>
+<li><strong>Day 4:</strong> Bana Hills – Golden Bridge</li>
+<li><strong>Day 5:</strong> Ho Chi Minh City Tour</li>
+<li><strong>Day 6:</strong> Departure</li>
+</ul>
+
+<p>✔ Airport Transfers ✔ Breakfast ✔ Sightseeing ✔ Cruise Stay</p>
+`,
+
+"Singapore": `
+<h4>Singapore Holiday Packages (3★ & 4★ Hotels)</h4>
+<ul>
+<li><strong>4 Nights / 5 Days – ₹35,000 per person</strong></li>
+<li><strong>5 Nights / 6 Days – ₹50,000 per person</strong></li>
+</ul>
+
+<h4>Sample Itinerary</h4>
+<ul>
+<li><strong>Day 1:</strong> Arrival – Night Safari</li>
+<li><strong>Day 2:</strong> City Tour – Marina Bay – Gardens by the Bay</li>
+<li><strong>Day 3:</strong> Sentosa Island – Universal Studios</li>
+<li><strong>Day 4:</strong> Leisure / Shopping</li>
+<li><strong>Day 5:</strong> Departure</li>
+</ul>
+
+<p>✔ Airport Transfers ✔ Breakfast ✔ Sightseeing ✔ Theme Parks</p>
 `,
 
 "Europe": `
-<h4>12 Days / 11 Nights Europe Tour</h4>
-<p><strong>Day 1:</strong> Arrival Paris – Eiffel Tower Visit</p>
-<p><strong>Day 2:</strong> Paris City Tour – Seine Cruise</p>
-<p><strong>Day 3:</strong> Brussels – Amsterdam</p>
-<p><strong>Day 4:</strong> Amsterdam Canal Cruise</p>
-<p><strong>Day 5:</strong> Rhine Falls – Switzerland</p>
-<p><strong>Day 6:</strong> Mt. Titlis – Lucerne</p>
-<p><strong>Day 7:</strong> Innsbruck – Swarovski Museum</p>
-<p><strong>Day 8:</strong> Venice Gondola Ride</p>
-<p><strong>Day 9:</strong> Rome – Vatican City</p>
-<p><strong>Day 10:</strong> Pisa – Florence</p>
-<p><strong>Day 11:</strong> Leisure Day</p>
-<p><strong>Day 12:</strong> Departure</p>
+<h4>Europe Grand Tour Packages (3★ & 4★ Hotels)</h4>
+<ul>
+<li><strong>10 Nights / 11 Days – ₹2,39,999 per person</strong></li>
+<li><strong>12 Nights / 13 Days – ₹2,89,999 per person</strong></li>
+</ul>
+
+<h4>Sample Itinerary</h4>
+<ul>
+<li><strong>Day 1:</strong> Arrival Paris – Eiffel Tower</li>
+<li><strong>Day 2:</strong> Paris City Tour – Seine Cruise</li>
+<li><strong>Day 3:</strong> Brussels – Amsterdam</li>
+<li><strong>Day 4:</strong> Amsterdam Canal Cruise</li>
+<li><strong>Day 5:</strong> Rhine Falls – Switzerland</li>
+<li><strong>Day 6:</strong> Mt. Titlis – Lucerne</li>
+<li><strong>Day 7:</strong> Innsbruck – Swarovski Museum</li>
+<li><strong>Day 8:</strong> Venice Gondola Ride</li>
+<li><strong>Day 9:</strong> Rome – Vatican City</li>
+<li><strong>Day 10:</strong> Pisa – Florence</li>
+<li><strong>Day 11:</strong> Leisure Day</li>
+<li><strong>Day 12:</strong> Departure</li>
+</ul>
+
+<p>✔ Airport Transfers ✔ Breakfast ✔ Sightseeing ✔ Multi-Country Travel</p>
 `
 };
 
-/* ================= ITINERARY MODAL ================= */
+/* ================= MODAL ================= */
 function openItinerary(dest){
-  document.getElementById("modalTitle").innerText = dest + " Itinerary";
+  document.getElementById("modalTitle").innerText = dest + " Packages & Itinerary";
   document.getElementById("modalContent").innerHTML = itineraries[dest];
   document.getElementById("itineraryModal").style.display = "flex";
 }
