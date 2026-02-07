@@ -2,834 +2,858 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vagabond Escapes Pvt. Ltd.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Best Domestic & International Tour Packages by Vagabond Escapes Pvt. Ltd." />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
-    body { background: #f7f9fc; color: #222; }
-    header {
-      background: linear-gradient(135deg, #ff6b6b, #ff9f43);
-      color: white;
-      padding: 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 22px;
-      font-weight: bold;
-    }
-    .logo img { height: 45px; }
-    nav a {
-      color: white;
-      margin-left: 18px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    nav a:hover { text-decoration: underline; }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+    body{background:#f5f7fa;color:#222}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;border-radius:10px}
 
-    .hero {
-      background: url('Goa.jpeg') center/cover no-repeat;
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      position: relative;
+    header{
+      background:linear-gradient(120deg,#0f2027,#203a43,#2c5364);
+      color:#fff;
+      padding:18px 20px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      position:sticky;
+      top:0;
+      z-index:999;
     }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
+    header .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:20px;
+      font-weight:bold;
     }
-    .hero-content { position: relative; z-index: 2; max-width: 800px; padding: 20px; }
-    .hero h1 { font-size: 44px; margin-bottom: 12px; }
-    .hero p { font-size: 18px; margin-bottom: 20px; }
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      background: #ff6b6b;
-      color: white;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 5px;
+    header .logo img{
+      width:45px;height:45px;border-radius:50%;background:#fff;padding:3px;
     }
-    .btn.secondary { background: #1dd1a1; }
-    .btn:hover { opacity: 0.9; }
+    nav a{
+      margin:0 10px;
+      font-weight:600;
+      font-size:15px;
+    }
+    nav a:hover{color:#ffd700}
 
-    section { padding: 60px 20px; }
-    .container { max-width: 1200px; margin: auto; }
-    .section-title {
-      text-align: center;
-      font-size: 32px;
-      margin-bottom: 10px;
+    .hero{
+      background:
+        linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80");
+      background-size:cover;
+      background-position:center;
+      color:#fff;
+      padding:70px 20px;
+      text-align:center;
     }
-    .section-subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 40px;
+    .hero h1{font-size:38px;margin-bottom:12px}
+    .hero p{font-size:18px;max-width:700px;margin:auto}
+
+    .section{
+      padding:50px 20px;
+      max-width:1200px;
+      margin:auto;
+    }
+    .section h2{
+      text-align:center;
+      margin-bottom:35px;
+      font-size:30px;
+      color:#203a43;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:22px;
+    }
+    .card{
+      background:#fff;
+      border-radius:15px;
+      overflow:hidden;
+      box-shadow:0 6px 15px rgba(0,0,0,.1);
+      transition:.3s;
+      display:flex;
+      flex-direction:column;
+    }
+    .card:hover{transform:translateY(-5px)}
+    .card img{
+      height:180px;
+      object-fit:cover;
+      width:100%;
+    }
+    .card-content{
+      padding:15px;
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .card-content h3{
+      margin-bottom:6px;
+      font-size:20px;
+      color:#0f2027;
+    }
+    .card-content p{
+      font-size:14px;
+      color:#555;
+      margin-bottom:8px;
+      line-height:1.5;
+    }
+    .price{
+      font-weight:bold;
+      color:#e63946;
+      margin-bottom:10px;
+    }
+    .btn{
+      background:#0f2027;
+      color:#fff;
+      padding:9px 14px;
+      border-radius:8px;
+      text-align:center;
+      display:inline-block;
+      font-size:14px;
+      transition:.3s;
+    }
+    .btn:hover{background:#e63946}
+
+    .about{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+      align-items:center;
+    }
+    .about img{
+      border-radius:15px;
+      box-shadow:0 6px 15px rgba(0,0,0,.15);
+    }
+    .about p{
+      font-size:16px;
+      line-height:1.7;
+      color:#444;
     }
 
-    .card {
-      background: white;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
+    .reviews{
+      background:#fff;
+      padding:35px 25px;
+      border-radius:15px;
+      box-shadow:0 6px 15px rgba(0,0,0,.1);
     }
-    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 28px rgba(0,0,0,0.12); }
-    .card img { width: 100%; height: 200px; object-fit: cover; }
-    .card-body { padding: 16px; }
-    .card-title { font-size: 20px; font-weight: bold; margin-bottom: 6px; }
-    .card-price { color: #ff6b6b; font-weight: bold; margin-top: 6px; }
-    .tag {
-      display: inline-block;
-      background: #eef2ff;
-      color: #4f46e5;
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-size: 12px;
-      margin-right: 6px;
-      margin-top: 6px;
+    .review{
+      margin-bottom:20px;
+      padding-bottom:15px;
+      border-bottom:1px solid #ddd;
+    }
+    .review:last-child{border-bottom:none;margin-bottom:0}
+    .review h4{color:#0f2027;margin-bottom:4px}
+    .review p{font-size:14px;color:#555}
+
+    .contact-box{
+      background:#fff;
+      padding:30px;
+      border-radius:15px;
+      box-shadow:0 6px 15px rgba(0,0,0,.1);
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+    .contact-box h3{margin-bottom:10px;color:#203a43}
+    .contact-box p{font-size:15px;color:#444;line-height:1.6}
+
+    footer{
+      background:#0f2027;
+      color:#fff;
+      padding:30px 20px;
+      text-align:center;
+      margin-top:40px;
+    }
+    footer p{font-size:14px;color:#ddd}
+
+    .whatsapp-btn{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25d366;
+      color:#fff;
+      padding:12px 18px;
+      border-radius:50px;
+      font-weight:bold;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      box-shadow:0 4px 12px rgba(0,0,0,.25);
+      z-index:9999;
+    }
+    .whatsapp-btn:hover{background:#1ebe5b}
+
+    .modal{
+      position:fixed;
+      top:0;left:0;
+      width:100%;height:100%;
+      background:rgba(0,0,0,.7);
+      display:none;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+      z-index:10000;
+    }
+    .modal-content{
+      background:#fff;
+      max-width:900px;
+      width:100%;
+      max-height:90vh;
+      overflow-y:auto;
+      border-radius:15px;
+      padding:25px;
+      position:relative;
+      animation:fadeIn .3s ease;
+    }
+    @keyframes fadeIn{
+      from{opacity:0;transform:scale(.95)}
+      to{opacity:1;transform:scale(1)}
+    }
+    .close-btn{
+      position:absolute;
+      top:12px;
+      right:12px;
+      background:#e63946;
+      color:#fff;
+      border:none;
+      padding:6px 10px;
+      border-radius:50%;
+      cursor:pointer;
+      font-weight:bold;
+    }
+    .modal h2{margin-bottom:15px;color:#203a43}
+    .modal img{
+      width:100%;
+      max-height:300px;
+      object-fit:cover;
+      border-radius:12px;
+      margin-bottom:15px;
+    }
+    .itinerary-day{
+      margin-bottom:15px;
+      background:#f7f9fb;
+      padding:12px 14px;
+      border-radius:10px;
+    }
+    .itinerary-day h4{
+      margin-bottom:5px;
+      color:#0f2027;
+    }
+    .itinerary-day p{
+      font-size:14px;
+      line-height:1.6;
+      color:#444;
+    }
+    .modal-actions{
+      margin-top:20px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
     }
 
-    .about {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      align-items: center;
+    .pdf-btn{
+      background:#203a43;
+      color:#fff;
+      padding:9px 14px;
+      border-radius:8px;
+      border:none;
+      cursor:pointer;
+      font-size:14px;
     }
-    .about img { width: 100%; border-radius: 18px; }
+    .pdf-btn:hover{background:#e63946}
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .feature {
-      background: white;
-      padding: 20px;
-      border-radius: 14px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-      text-align: center;
-    }
-    .feature h4 { margin-bottom: 8px; }
-
-    .reviews {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-      margin-top: 30px;
-    }
-    .review {
-      background: white;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    }
-    .stars { color: #f59e0b; margin-bottom: 6px; }
-    .review-name { font-weight: bold; margin-top: 8px; }
-
-    footer {
-      background: #0f172a;
-      color: #cbd5e1;
-      padding: 40px 20px 20px;
-    }
-    .footer-grid {
-      max-width: 1200px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-    }
-    footer h4 { color: white; margin-bottom: 12px; }
-    footer a { color: #cbd5e1; text-decoration: none; display: block; margin-bottom: 6px; }
-    footer a:hover { text-decoration: underline; }
-    .footer-bottom {
-      text-align: center;
-      margin-top: 30px;
-      border-top: 1px solid #1e293b;
-      padding-top: 15px;
-      font-size: 14px;
-    }
-
-    /* Modal */
-    .modal {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.65);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      padding: 20px;
-    }
-    .modal.active { display: flex; }
-    .modal-content {
-      background: white;
-      max-width: 900px;
-      width: 100%;
-      border-radius: 18px;
-      overflow: hidden;
-      max-height: 90vh;
-      overflow-y: auto;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    }
-    .modal-header {
-      background: linear-gradient(135deg, #ff6b6b, #ff9f43);
-      color: white;
-      padding: 16px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .modal-body { padding: 20px; }
-    .close-btn {
-      background: rgba(255,255,255,0.25);
-      border: none;
-      color: white;
-      font-size: 20px;
-      padding: 4px 10px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    .itinerary-day {
-      margin-bottom: 16px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid #eee;
-    }
-    .itinerary-day h4 { margin-bottom: 6px; color: #ff6b6b; }
-
-    .price-box {
-      background: #f1f5f9;
-      padding: 16px;
-      border-radius: 12px;
-      margin: 16px 0;
-    }
-    .price-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 6px 0;
-      border-bottom: 1px dashed #cbd5e1;
-      font-weight: 600;
-    }
-    .price-row:last-child { border-bottom: none; }
-
-    .hotel-tags .tag { background: #ecfeff; color: #0369a1; }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-    .gallery img {
-      width: 100%;
-      height: 110px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .modal-actions { margin-top: 20px; text-align: right; }
-
-    .contact-strip {
-      background: #fff7ed;
-      padding: 20px;
-      border-radius: 16px;
-      margin-top: 30px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      align-items: center;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #22c55e;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 12px;
-      font-size: 12px;
-      margin-left: 6px;
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 30px; }
-      .hero p { font-size: 16px; }
-      nav a { margin-left: 10px; font-size: 14px; }
+    @media(max-width:600px){
+      .hero h1{font-size:28px}
+      .hero p{font-size:16px}
+      nav{margin-top:10px}
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <div class="nav">
-      <div class="logo">
-        <img src="logo.png.jpeg" alt="Vagabond Escapes Logo" />
-        Vagabond Escapes
-      </div>
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#destinations">Destinations</a>
-        <a href="#about">About</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header>
+  <div class="logo">
+    <img src="logo.png.jpeg" alt="Vagabond Escapes Logo" onerror="this.style.display='none'">
+    Vagabond Escapes Pvt. Ltd.
+  </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#packages">Packages</a>
+    <a href="#about">About</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <!-- Hero -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Explore the World with Vagabond Escapes ✈️</h1>
-      <p>Domestic & International Tour Packages with Best Prices, 3⭐ & 4⭐ Hotels, and Complete Travel Support.</p>
-      <a href="#destinations" class="btn">Explore Destinations</a>
-      <a href="#contact" class="btn secondary">Call Now</a>
-    </div>
-  </section>
+<section class="hero" id="home">
+  <h1>Travel the World with Vagabond Escapes</h1>
+  <p>Affordable Domestic & International Tour Packages with 3★ & 4★ Hotels, Sightseeing, Transfers & Expert Support.</p>
+</section>
 
-  <!-- Destinations -->
-  <section id="destinations">
-    <div class="container">
-      <h2 class="section-title">🌍 Our Top Destinations</h2>
-      <p class="section-subtitle">Click on any destination to view itinerary, price, photos & book instantly.</p>
+<section class="section" id="packages">
+  <h2>🌏 Our Tour Packages</h2>
 
-      <div class="grid" id="destinationGrid">
-        <!-- Cards injected by JS -->
-      </div>
-    </div>
-  </section>
+  <h3 style="margin:30px 0 15px;color:#203a43;">Domestic Packages</h3>
+  <div class="grid">
 
-  <!-- About -->
-  <section id="about" style="background:#f1f5f9;">
-    <div class="container">
-      <h2 class="section-title">🏝 About Vagabond Escapes</h2>
-      <p class="section-subtitle">Your trusted travel partner for memorable journeys.</p>
-
-      <div class="about">
+    <div class="card">
+      <img src="Andaman-Honeymoon1-1.jpg" alt="Andaman">
+      <div class="card-content">
         <div>
-          <h3>Vagabond Escapes Pvt. Ltd.</h3>
-          <p style="margin:12px 0 16px; line-height:1.6;">
-            Vagabond Escapes Pvt. Ltd. is a premium travel company offering handpicked domestic and international tour packages.
-            We specialize in honeymoon trips, family holidays, group tours, and customized itineraries with 3-star & 4-star hotels,
-            airport transfers, sightseeing, and 24x7 support.
-          </p>
-
-          <div class="features">
-            <div class="feature">
-              <h4>✔ Best Prices</h4>
-              <p>Direct deals with hotels & partners.</p>
-            </div>
-            <div class="feature">
-              <h4>✔ Trusted Company</h4>
-              <p>1000+ happy travelers.</p>
-            </div>
-            <div class="feature">
-              <h4>✔ 24x7 Support</h4>
-              <p>Before, during & after travel.</p>
-            </div>
-            <div class="feature">
-              <h4>✔ Easy Payment</h4>
-              <p>Secure online payment options.</p>
-            </div>
-          </div>
+          <h3>Andaman Islands</h3>
+          <p>Crystal clear beaches, snorkeling, island hopping & romantic sunsets.</p>
+          <div class="price">4N/5D ₹16,000 | 5N/6D ₹19,000 per person</div>
         </div>
-
-        <div>
-          <img src="Andaman-Honeymoon-1.jpg" alt="Travel" />
-        </div>
+        <a href="#" class="btn" onclick="openModal('andaman')">View Itinerary</a>
       </div>
     </div>
-  </section>
 
-  <!-- Reviews -->
-  <section id="reviews">
-    <div class="container">
-      <h2 class="section-title">⭐ Customer Reviews</h2>
-      <p class="section-subtitle">Real experiences from our happy travelers.</p>
-
-      <div class="reviews">
-        <div class="review">
-          <div class="stars">★★★★★</div>
-          <p>Our Andaman trip was perfectly organized. Hotels, transfers, and sightseeing were top-class. Highly recommended!</p>
-          <div class="review-name">— Rohan Sharma (Delhi)</div>
+    <div class="card">
+      <img src="kerala.jpg" alt="Kerala">
+      <div class="card-content">
+        <div>
+          <h3>Kerala</h3>
+          <p>Backwaters, hill stations, tea gardens & serene beaches.</p>
+          <div class="price">4N/5D ₹16,000 | 5N/6D ₹19,000 per person</div>
         </div>
-        <div class="review">
-          <div class="stars">★★★★★</div>
-          <p>Booked Thailand package from Vagabond Escapes. Smooth visa guidance and amazing hotels. Worth every rupee.</p>
-          <div class="review-name">— Neha Verma (Noida)</div>
-        </div>
-        <div class="review">
-          <div class="stars">★★★★☆</div>
-          <p>Goa family trip was awesome. Support team was always available. Will book again soon.</p>
-          <div class="review-name">— Amit Patel (Ahmedabad)</div>
-        </div>
-        <div class="review">
-          <div class="stars">★★★★★</div>
-          <p>Bali honeymoon package was dreamy. Best experience with Vagabond Escapes ❤️</p>
-          <div class="review-name">— Pooja & Rahul (Mumbai)</div>
-        </div>
+        <a href="#" class="btn" onclick="openModal('kerala')">View Itinerary</a>
       </div>
     </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact" style="background:#f1f5f9;">
-    <div class="container">
-      <h2 class="section-title">📞 Contact Us</h2>
-      <p class="section-subtitle">We’re here to plan your perfect holiday.</p>
-
-      <div class="contact-strip">
+    <div class="card">
+      <img src="Manali.avif" alt="Manali">
+      <div class="card-content">
         <div>
-          <strong>Company:</strong><br />
-          Vagabond Escapes Pvt. Ltd.
+          <h3>Manali</h3>
+          <p>Snowy mountains, adventure sports & scenic valleys.</p>
+          <div class="price">3N/4D ₹8,000 | 4N/5D ₹10,000 per person</div>
         </div>
-        <div>
-          <strong>Email:</strong><br />
-          <a href="mailto:vagabondescapesinfo@gmail.com">vagabondescapesinfo@gmail.com</a>
-        </div>
-        <div>
-          <strong>Contact:</strong><br />
-          <a href="tel:9773669645">9773669645</a>,
-          <a href="tel:7524808364">7524808364</a>,
-          <a href="tel:9999625966">9999625966</a>
-        </div>
-        <div>
-          <strong>Office 1:</strong><br />
-          Nai Bajar, Block-A/359,<br />Mahmudabad, Sitapur,<br />Uttar Pradesh – 261203
-        </div>
-        <div>
-          <strong>Office 2:</strong><br />
-          A-135, A Block,<br />Sector 63, Noida,<br />Uttar Pradesh – 201309
-        </div>
+        <a href="#" class="btn" onclick="openModal('manali')">View Itinerary</a>
       </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <h4>Vagabond Escapes</h4>
-        <p>Your trusted partner for Domestic & International tours with best prices, premium hotels, and complete travel support.</p>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <a href="#home">Home</a>
-        <a href="#destinations">Destinations</a>
-        <a href="#about">About</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div>
-        <h4>Top Destinations</h4>
-        <a href="#destinations">Andaman</a>
-        <a href="#destinations">Kerala</a>
-        <a href="#destinations">Goa</a>
-        <a href="#destinations">Dubai</a>
-        <a href="#destinations">Thailand</a>
-        <a href="#destinations">Bali</a>
-      </div>
-      <div>
-        <h4>Support</h4>
-        <a href="tel:9773669645">Call Now</a>
-        <a href="mailto:vagabondescapesinfo@gmail.com">Email Us</a>
-        <a href="#contact">Visit Office</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      © <span id="year"></span> Vagabond Escapes Pvt. Ltd. All Rights Reserved.
-    </div>
-  </footer>
-
-  <!-- Modal -->
-  <div class="modal" id="destinationModal">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 id="modalTitle">Destination</h3>
-        <button class="close-btn" onclick="closeModal()">✖</button>
-      </div>
-      <div class="modal-body">
-        <div class="gallery" id="modalGallery"></div>
-
-        <p id="modalDescription" style="margin-bottom:12px;"></p>
-
-        <div class="hotel-tags" id="modalHotels"></div>
-
-        <div class="price-box" id="modalPrices"></div>
-
-        <h3>📅 Detailed Itinerary</h3>
-        <div id="modalItinerary"></div>
-
-        <div class="modal-actions">
-          <button class="btn" onclick="downloadPDF()">⬇ Download Itinerary PDF</button>
-          <button class="btn secondary" onclick="payNow()">💳 Pay with Razorpay</button>
+    <div class="card">
+      <img src="Goa.jpeg" alt="Goa">
+      <div class="card-content">
+        <div>
+          <h3>Goa</h3>
+          <p>Golden beaches, nightlife, water sports & Portuguese culture.</p>
+          <div class="price">3N/4D ₹7,000 | 4N/5D ₹8,500 per person</div>
         </div>
+        <a href="#" class="btn" onclick="openModal('goa')">View Itinerary</a>
       </div>
     </div>
+
   </div>
 
-  <script>
-    // =====================
-    // DATA SECTION
-    // =====================
+  <h3 style="margin:40px 0 15px;color:#203a43;">International Packages</h3>
+  <div class="grid">
 
-    const destinations = [
+    <div class="card">
+      <img src="Dubai.jpeg" alt="Dubai">
+      <div class="card-content">
+        <div>
+          <h3>Dubai</h3>
+          <p>Luxury city tours, desert safari, skyscrapers & shopping festivals.</p>
+          <div class="price">3N/4D ₹20,000 | 4N/5D ₹23,000 per person</div>
+        </div>
+        <a href="#" class="btn" onclick="openModal('dubai')">View Itinerary</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="Thailand.jpeg" alt="Thailand">
+      <div class="card-content">
+        <div>
+          <h3>Thailand (Bangkok + Pattaya)</h3>
+          <p>Vibrant nightlife, beaches, temples & island tours.</p>
+          <div class="price">2N Bangkok + 2N Pattaya ₹26,500 per person</div>
+        </div>
+        <a href="#" class="btn" onclick="openModal('thailand')">View Itinerary</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="Bali.jpeg" alt="Bali">
+      <div class="card-content">
+        <div>
+          <h3>Bali</h3>
+          <p>Tropical paradise, temples, rice terraces & beach resorts.</p>
+          <div class="price">4N/5D ₹19,000 | 5N/6D ₹21,000 per person</div>
+        </div>
+        <a href="#" class="btn" onclick="openModal('bali')">View Itinerary</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="vietnam.jpeg" alt="Vietnam">
+      <div class="card-content">
+        <div>
+          <h3>Vietnam</h3>
+          <p>Halong Bay cruises, historic cities & delicious street food.</p>
+          <div class="price">5N/6D ₹50,000 | 6N/7D ₹60,000 per person</div>
+        </div>
+        <a href="#" class="btn" onclick="openModal('vietnam')">View Itinerary</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="Singapore.webp" alt="Singapore">
+      <div class="card-content">
+        <div>
+          <h3>Singapore</h3>
+          <p>Modern cityscape, theme parks, shopping & skyline views.</p>
+          <div class="price">4N/5D ₹35,000 | 5N/6D ₹50,000 per person</div>
+        </div>
+        <a href="#" class="btn" onclick="openModal('singapore')">View Itinerary</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="europe.jpeg" alt="Europe">
+      <div class="card-content">
+        <div>
+          <h3>Europe (Multi-Country)</h3>
+          <p>Paris, Switzerland, Italy, Netherlands & iconic landmarks.</p>
+          <div class="price">Starting from ₹1,25,000 per person</div>
+        </div>
+        <a href="#" class="btn" onclick="openModal('europe')">View Itinerary</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section" id="about">
+  <h2>🏢 About Vagabond Escapes</h2>
+  <div class="about">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=80" alt="Travel">
+    <div>
+      <p>
+        Vagabond Escapes Pvt. Ltd. is a trusted travel company offering carefully curated domestic and international tour packages with 3★ and 4★ hotels, private transfers, guided sightseeing, and personalized customer support. Our mission is to make travel affordable, memorable, and hassle-free for every traveler.
+      </p>
+      <p>
+        Whether you're planning a romantic honeymoon, family vacation, group tour, or corporate trip, our experienced team ensures seamless planning, best prices, and unforgettable experiences.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="reviews">
+  <h2>⭐ Customer Reviews</h2>
+  <div class="reviews">
+    <div class="review">
+      <h4>Rahul Sharma – Goa Trip</h4>
+      <p>“Amazing service! Everything was perfectly arranged — hotels, transfers & sightseeing. Highly recommend Vagabond Escapes.”</p>
+    </div>
+    <div class="review">
+      <h4>Pooja Verma – Andaman Honeymoon</h4>
+      <p>“Best honeymoon experience! Beautiful resorts and smooth travel planning. Thank you so much.”</p>
+    </div>
+    <div class="review">
+      <h4>Arjun Mehta – Dubai Tour</h4>
+      <p>“Great prices and professional support. Desert safari and city tour were unforgettable.”</p>
+    </div>
+    <div class="review">
+      <h4>Neha Gupta – Bali Trip</h4>
+      <p>“Loved the entire Bali package. Hotels and itinerary were exactly as promised. 5 stars!”</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2>📞 Contact Us</h2>
+  <div class="contact-box">
+    <div>
+      <h3>Office Details</h3>
+      <p>
+        <strong>Company:</strong> Vagabond Escapes Pvt. Ltd.<br><br>
+        <strong>Email:</strong> vagabondescapesinfo@gmail.com<br><br>
+        <strong>Phone:</strong><br>
+        +91 9773669645<br>
+        +91 7524808364<br>
+        +91 9999625966<br><br>
+        <strong>Address 1:</strong><br>
+        Nai Bajar, Block-A/359,<br>
+        Mahmudabad, Sitapur,<br>
+        Uttar Pradesh – 261203<br><br>
+        <strong>Address 2:</strong><br>
+        A-135, A Block, Sector 63,<br>
+        Noida, Uttar Pradesh – 201309
+      </p>
+    </div>
+
+    <div>
+      <h3>Quick Enquiry</h3>
+      <p>
+        Click the WhatsApp button below and chat directly with our travel expert for instant quotes and bookings.
+      </p>
+      <a href="https://wa.me/919773669645?text=Hello%20Vagabond%20Escapes,%20I%20want%20to%20enquire%20about%20tour%20packages."
+         target="_blank" class="btn" style="background:#25d366;">Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Vagabond Escapes Pvt. Ltd. | All Rights Reserved</p>
+</footer>
+
+<a class="whatsapp-btn"
+   href="https://wa.me/919773669645?text=Hello%20Vagabond%20Escapes,%20I%20want%20to%20enquire%20about%20tour%20packages."
+   target="_blank">
+  💬 WhatsApp
+</a>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <div class="modal-content" id="modalContent">
+    <button class="close-btn" onclick="closeModal()">×</button>
+  </div>
+</div>
+
+<script>
+const itineraries = {
+  andaman: {
+    title: "Andaman Islands – 4 Nights / 5 Days",
+    img: "Andaman-Honeymoon1-1.jpg",
+    days: [
       {
-        id: 'andaman',
-        name: 'Andaman Islands',
-        image: 'Andaman-Honeymoon-1.jpg',
-        gallery: ['Andaman-Honeymoon-1.jpg'],
-        description: 'Tropical paradise with crystal-clear beaches, coral reefs, and romantic sunsets. Perfect for honeymoon & family trips.',
-        hotels: ['3 Star Hotels', '4 Star Hotels'],
-        prices: [
-          { label: '4 Nights / 5 Days', price: '₹16,000 per person' },
-          { label: '5 Nights / 6 Days', price: '₹19,000 per person' }
-        ],
-        itinerary: {
-          'Day 1': 'Arrival at Port Blair. Airport pickup, hotel check-in. Visit Cellular Jail and attend Light & Sound Show in the evening.',
-          'Day 2': 'Excursion to Havelock Island. Visit Radhanagar Beach (Asia’s best beach). Leisure time for photography & relaxation.',
-          'Day 3': 'Visit Elephant Beach for snorkeling and water activities. Return to Port Blair by evening.',
-          'Day 4': 'Visit Ross Island and North Bay Island. Enjoy coral viewing and optional water sports.',
-          'Day 5': 'Breakfast and transfer to airport for departure with beautiful memories.'
-        }
+        day: "Day 1 – Arrival in Port Blair",
+        text: "Arrival at Port Blair airport. Meet our representative and transfer to hotel. Visit Cellular Jail followed by Light & Sound Show in the evening. Overnight stay at hotel."
       },
       {
-        id: 'kerala',
-        name: 'Kerala',
-        image: 'kerala.jpg',
-        gallery: ['kerala.jpg'],
-        description: 'God’s Own Country with backwaters, hill stations, beaches, and lush greenery.',
-        hotels: ['3 Star Hotels', '4 Star Hotels'],
-        prices: [
-          { label: '4 Nights / 5 Days', price: '₹16,000 per person' },
-          { label: '5 Nights / 6 Days', price: '₹19,000 per person' }
-        ],
-        itinerary: {
-          'Day 1': 'Arrival at Kochi. Transfer to hotel. Visit Fort Kochi, Chinese fishing nets, and local markets.',
-          'Day 2': 'Drive to Munnar. En route visit waterfalls and spice plantations. Evening leisure.',
-          'Day 3': 'Munnar sightseeing – Tea gardens, Echo Point, Mattupetty Dam, and Top Station.',
-          'Day 4': 'Transfer to Alleppey. Houseboat cruise through backwaters with lunch and dinner.',
-          'Day 5': 'Checkout and transfer to airport/railway station.'
-        }
+        day: "Day 2 – Port Blair → Havelock Island",
+        text: "Morning ferry to Havelock Island. Visit Radhanagar Beach, one of Asia’s best beaches. Enjoy swimming, photography and sunset views. Overnight at resort."
       },
       {
-        id: 'manali',
-        name: 'Manali',
-        image: 'Manali.avif',
-        gallery: ['Manali.avif'],
-        description: 'Snow-capped mountains, adventure sports, rivers, and scenic valleys.',
-        hotels: ['3 Star Hotels', '4 Star Hotels'],
-        prices: [
-          { label: '3 Nights / 4 Days', price: '₹8,000 per person' },
-          { label: '4 Nights / 5 Days', price: '₹10,000 per person' }
-        ],
-        itinerary: {
-          'Day 1': 'Arrival at Manali. Check-in and leisure time. Evening visit Mall Road & local markets.',
-          'Day 2': 'Visit Solang Valley for snow activities, ropeway ride, and adventure sports.',
-          'Day 3': 'Manali sightseeing – Hadimba Temple, Vashisht Hot Springs, Club House.',
-          'Day 4': 'Breakfast and departure.'
-        }
+        day: "Day 3 – Havelock → Elephant Beach",
+        text: "Visit Elephant Beach for snorkeling and water sports activities like banana boat ride, jet ski, glass-bottom boat ride. Return to hotel for relaxation."
       },
       {
-        id: 'goa',
-        name: 'Goa',
-        image: 'Goa.jpeg',
-        gallery: ['Goa.jpeg'],
-        description: 'India’s party capital with golden beaches, nightlife, water sports, and Portuguese heritage.',
-        hotels: ['3 Star Hotels', '4 Star Hotels'],
-        prices: [
-          { label: '3 Nights / 4 Days', price: '₹7,000 per person' },
-          { label: '4 Nights / 5 Days', price: '₹8,500 per person' }
-        ],
-        itinerary: {
-          'Day 1': 'Arrival at Goa. Hotel check-in and leisure at nearby beach.',
-          'Day 2': 'North Goa sightseeing – Baga, Calangute, Anjuna beaches and Fort Aguada.',
-          'Day 3': 'South Goa sightseeing – Colva Beach, Basilica of Bom Jesus, Miramar Beach.',
-          'Day 4': 'Breakfast and departure.'
-        }
+        day: "Day 4 – Havelock → Port Blair",
+        text: "Return ferry to Port Blair. Visit Corbyn’s Cove Beach and local markets for shopping souvenirs."
       },
       {
-        id: 'dubai',
-        name: 'Dubai',
-        image: 'Dubai.jpeg',
-        gallery: ['Dubai.jpeg'],
-        description: 'Luxury city with skyscrapers, shopping malls, desert safaris, and world-class attractions.',
-        hotels: ['3 Star Hotels', '4 Star Hotels'],
-        prices: [
-          { label: '3 Nights / 4 Days', price: '₹20,000 per person' },
-          { label: '4 Nights / 5 Days', price: '₹23,000 per person' }
-        ],
-        itinerary: {
-          'Day 1': 'Arrival at Dubai. Dhow Cruise dinner at Marina with live entertainment.',
-          'Day 2': 'Dubai city tour – Burj Khalifa, Dubai Mall, Palm Jumeirah, Jumeirah Beach.',
-          'Day 3': 'Desert Safari with dune bashing, BBQ dinner, belly dance & Tanoura show.',
-          'Day 4': 'Shopping and departure.'
-        }
-      },
-      {
-        id: 'thailand',
-        name: 'Thailand (Bangkok & Pattaya)',
-        image: 'Thailand.jpeg',
-        gallery: ['Thailand.jpeg'],
-        description: 'Beautiful beaches, nightlife, temples, shopping, and exciting island tours.',
-        hotels: ['3 Star Hotels', '4 Star Hotels'],
-        prices: [
-          { label: 'Bangkok 2N + Pattaya 2N', price: '₹26,500 per person' },
-          { label: 'Phuket 2N + Krabi 2N', price: '₹29,500 per person' }
-        ],
-        itinerary: {
-          'Day 1': 'Arrival at Bangkok. Transfer to Pattaya. Evening Alcazar Show.',
-          'Day 2': 'Coral Island tour with speedboat and water activities.',
-          'Day 3': 'Transfer to Bangkok. Bangkok city tour – temples and local markets.',
-          'Day 4': 'Shopping and departure.'
-        }
-      },
-      {
-        id: 'bali',
-        name: 'Bali',
-        image: 'Bali.jpeg',
-        gallery: ['Bali.jpeg'],
-        description: 'Island of Gods with beaches, temples, rice terraces, waterfalls, and romantic vibes.',
-        hotels: ['3 Star Hotels', '4 Star Hotels'],
-        prices: [
-          { label: '4 Nights / 5 Days', price: '₹19,000 per person' },
-          { label: '5 Nights / 6 Days', price: '₹21,000 per person' }
-        ],
-        itinerary: {
-          'Day 1': 'Arrival at Bali. Hotel check-in and leisure.',
-          'Day 2': 'Ubud tour – Monkey Forest, Tegallalang Rice Terrace, Tegenungan Waterfall.',
-          'Day 3': 'Water sports at Nusa Dua and Uluwatu Temple sunset tour.',
-          'Day 4': 'Tanah Lot Temple tour and shopping.',
-          'Day 5': 'Departure.'
-        }
-      },
-      {
-        id: 'vietnam',
-        name: 'Vietnam',
-        image: 'vietnam.jpeg',
-        gallery: ['vietnam.jpeg'],
-        description: 'Blend of natural beauty, rich culture, vibrant cities, and delicious cuisine.',
-        hotels: ['3 Star Hotels', '4 Star Hotels'],
-        prices: [
-          { label: '5 Nights / 6 Days', price: '₹50,000 per person' },
-          { label: '6 Nights / 7 Days', price: '₹60,000 per person' }
-        ],
-        itinerary: {
-          'Day 1': 'Arrival at Hanoi. Evening Old Quarter walk and shopping.',
-          'Day 2': 'Halong Bay cruise with lunch and kayaking.',
-          'Day 3': 'Hanoi sightseeing – Ho Chi Minh Mausoleum, One Pillar Pagoda.',
-          'Day 4': 'Fly to Ho Chi Minh City. Evening leisure.',
-          'Day 5': 'Cu Chi Tunnels tour and city sightseeing.',
-          'Day 6': 'Shopping and departure.'
-        }
-      },
-      {
-        id: 'singapore',
-        name: 'Singapore',
-        image: 'Singapore.webp',
-        gallery: ['Singapore.webp'],
-        description: 'Clean, modern city with iconic skyline, theme parks, shopping, and world-class attractions.',
-        hotels: ['3 Star Hotels', '4 Star Hotels'],
-        prices: [
-          { label: '4 Nights / 5 Days', price: '₹35,000 per person' },
-          { label: '5 Nights / 6 Days', price: '₹50,000 per person' }
-        ],
-        itinerary: {
-          'Day 1': 'Arrival at Singapore. Night Safari experience.',
-          'Day 2': 'Singapore city tour – Merlion Park, Marina Bay Sands, Orchard Road.',
-          'Day 3': 'Sentosa Island tour – Universal Studios / SEA Aquarium.',
-          'Day 4': 'Gardens by the Bay and shopping.',
-          'Day 5': 'Departure.'
-        }
-      },
-      {
-        id: 'europe',
-        name: 'Europe Tour',
-        image: 'europe.jpeg',
-        gallery: ['europe.jpeg'],
-        description: 'Multi-country Europe tour covering iconic cities, landmarks, culture, and scenic beauty.',
-        hotels: ['3 Star Hotels', '4 Star Hotels'],
-        prices: [
-          { label: '7 Nights / 8 Days', price: '₹1,10,000 per person' },
-          { label: '9 Nights / 10 Days', price: '₹1,35,000 per person' }
-        ],
-        itinerary: {
-          'Day 1': 'Arrival in Paris. Evening Seine River Cruise and Eiffel Tower visit.',
-          'Day 2': 'Paris city tour – Louvre Museum, Champs-Élysées, Notre-Dame.',
-          'Day 3': 'Travel to Switzerland. Visit Lucerne and Mt. Titlis excursion.',
-          'Day 4': 'Interlaken sightseeing and scenic train rides.',
-          'Day 5': 'Travel to Italy. Rome city tour – Colosseum, Vatican City.',
-          'Day 6': 'Venice gondola ride and Murano glass factory visit.',
-          'Day 7': 'Florence sightseeing and Pisa Tower visit.',
-          'Day 8': 'Departure.'
-        }
+        day: "Day 5 – Departure",
+        text: "Breakfast at hotel. Transfer to airport for onward journey with beautiful memories."
       }
-    ];
+    ]
+  },
 
-    // =====================
-    // RENDER DESTINATIONS
-    // =====================
+  kerala: {
+    title: "Kerala – 4 Nights / 5 Days",
+    img: "kerala.jpg",
+    days: [
+      {
+        day: "Day 1 – Arrival in Cochin → Munnar",
+        text: "Arrival at Cochin airport/railway station and drive to Munnar. Enroute visit Cheeyappara & Valara waterfalls. Check-in at hotel and overnight stay."
+      },
+      {
+        day: "Day 2 – Munnar Sightseeing",
+        text: "Visit Eravikulam National Park (Rajamalai), Tea Museum, Mattupetty Dam, Echo Point and Kundala Lake. Enjoy scenic tea gardens and cool climate."
+      },
+      {
+        day: "Day 3 – Munnar → Thekkady",
+        text: "Drive to Thekkady. Visit Periyar Wildlife Sanctuary, enjoy boat ride in Periyar Lake and optional spice plantation tour."
+      },
+      {
+        day: "Day 4 – Thekkady → Alleppey Houseboat",
+        text: "Proceed to Alleppey. Check-in to houseboat and enjoy backwater cruise, village life views, coconut lagoons and traditional meals."
+      },
+      {
+        day: "Day 5 – Departure from Cochin",
+        text: "After breakfast, drive to Cochin airport/railway station for departure."
+      }
+    ]
+  },
 
-    const grid = document.getElementById('destinationGrid');
+  manali: {
+    title: "Manali – 3 Nights / 4 Days",
+    img: "Manali.avif",
+    days: [
+      {
+        day: "Day 1 – Arrival in Manali",
+        text: "Arrival in Manali. Check-in to hotel and relax. Evening free for Mall Road shopping and café hopping."
+      },
+      {
+        day: "Day 2 – Solang Valley & Snow Activities",
+        text: "Visit Solang Valley for adventure activities like paragliding, zorbing, snow scooter and ropeway rides. Return to hotel in evening."
+      },
+      {
+        day: "Day 3 – Manali Local Sightseeing",
+        text: "Visit Hadimba Devi Temple, Vashisht Hot Springs, Club House, Tibetan Monastery and Van Vihar."
+      },
+      {
+        day: "Day 4 – Departure",
+        text: "After breakfast, check-out and proceed for onward journey."
+      }
+    ]
+  },
 
-    destinations.forEach(dest => {
-      const card = document.createElement('div');
-      card.className = 'card';
-      card.innerHTML = `
-        <img src="${dest.image}" alt="${dest.name}">
-        <div class="card-body">
-          <div class="card-title">${dest.name}</div>
-          <div>${dest.description}</div>
-          <div class="card-price">From ${dest.prices[0].price}</div>
-          <div style="margin-top:8px;">
-            ${dest.hotels.map(h => `<span class="tag">${h}</span>`).join('')}
-          </div>
-        </div>
-      `;
-      card.onclick = () => openModal(dest.id);
-      grid.appendChild(card);
-    });
+  goa: {
+    title: "Goa – 3 Nights / 4 Days",
+    img: "Goa.jpeg",
+    days: [
+      {
+        day: "Day 1 – Arrival in Goa",
+        text: "Arrival at Goa airport/railway station. Transfer to hotel. Rest of the day at leisure. Enjoy beach walk and sunset views."
+      },
+      {
+        day: "Day 2 – North Goa Sightseeing",
+        text: "Visit Calangute Beach, Baga Beach, Anjuna Beach, Fort Aguada and Candolim Beach. Enjoy water sports like parasailing and banana boat ride."
+      },
+      {
+        day: "Day 3 – South Goa Sightseeing",
+        text: "Visit Colva Beach, Benaulim Beach, Dona Paula, Miramar Beach and Old Goa churches including Basilica of Bom Jesus."
+      },
+      {
+        day: "Day 4 – Departure",
+        text: "After breakfast, check-out and transfer to airport/railway station."
+      }
+    ]
+  },
 
-    // =====================
-    // MODAL FUNCTIONS
-    // =====================
+  dubai: {
+    title: "Dubai – 3 Nights / 4 Days",
+    img: "Dubai.jpeg",
+    days: [
+      {
+        day: "Day 1 – Arrival in Dubai",
+        text: "Arrival at Dubai International Airport. Transfer to hotel. Evening free for leisure or optional Marina walk."
+      },
+      {
+        day: "Day 2 – Dubai City Tour",
+        text: "Half-day city tour covering Burj Al Arab photo stop, Jumeirah Mosque, Dubai Museum, Palm Jumeirah, Atlantis and Gold Souk."
+      },
+      {
+        day: "Day 3 – Desert Safari",
+        text: "Afternoon desert safari with dune bashing, camel riding, sandboarding, BBQ dinner and live belly dance & Tanoura show."
+      },
+      {
+        day: "Day 4 – Departure",
+        text: "After breakfast, transfer to airport for onward journey."
+      }
+    ]
+  },
 
-    const modal = document.getElementById('destinationModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalGallery = document.getElementById('modalGallery');
-    const modalDescription = document.getElementById('modalDescription');
-    const modalHotels = document.getElementById('modalHotels');
-    const modalPrices = document.getElementById('modalPrices');
-    const modalItinerary = document.getElementById('modalItinerary');
+  thailand: {
+    title: "Thailand – Bangkok (2N) + Pattaya (2N)",
+    img: "Thailand.jpeg",
+    days: [
+      {
+        day: "Day 1 – Arrival in Bangkok → Pattaya",
+        text: "Arrival at Bangkok airport and transfer to Pattaya. Evening free for leisure or optional Alcazar Show."
+      },
+      {
+        day: "Day 2 – Coral Island Tour",
+        text: "Speedboat ride to Coral Island for snorkeling, parasailing, banana boat ride and beach activities. Evening free."
+      },
+      {
+        day: "Day 3 – Pattaya → Bangkok",
+        text: "Transfer to Bangkok. Enroute visit Gems Gallery. Evening enjoy Chao Phraya River Dinner Cruise."
+      },
+      {
+        day: "Day 4 – Bangkok City Tour & Departure",
+        text: "Visit Wat Pho (Reclining Buddha), Wat Arun, Golden Buddha Temple and shopping malls. Transfer to airport."
+      }
+    ]
+  },
 
-    let currentDestination = null;
+  bali: {
+    title: "Bali – 4 Nights / 5 Days",
+    img: "Bali.jpeg",
+    days: [
+      {
+        day: "Day 1 – Arrival in Bali",
+        text: "Arrival at Denpasar Airport. Transfer to hotel in Kuta/Seminyak area. Evening free for leisure and beach walk."
+      },
+      {
+        day: "Day 2 – Kintamani Volcano Tour",
+        text: "Visit Celuk village (silver handicrafts), Mas village (wood carvings), Tegenungan Waterfall, Mount Batur volcano view and coffee plantation."
+      },
+      {
+        day: "Day 3 – Uluwatu Temple & Beach",
+        text: "Visit Uluwatu Temple at cliff top, enjoy Kecak dance performance during sunset and relax at Padang Padang Beach."
+      },
+      {
+        day: "Day 4 – Tanah Lot Temple",
+        text: "Visit Tanah Lot sea temple, Taman Ayun Temple and enjoy shopping in local markets."
+      },
+      {
+        day: "Day 5 – Departure",
+        text: "After breakfast, transfer to airport for onward journey."
+      }
+    ]
+  },
 
-    function openModal(id) {
-      const dest = destinations.find(d => d.id === id);
-      if (!dest) return;
-      currentDestination = dest;
+  vietnam: {
+    title: "Vietnam – 5 Nights / 6 Days",
+    img: "vietnam.jpeg",
+    days: [
+      {
+        day: "Day 1 – Arrival in Hanoi",
+        text: "Arrival at Hanoi airport. Transfer to hotel. Evening free to explore Old Quarter and local street food."
+      },
+      {
+        day: "Day 2 – Hanoi City Tour",
+        text: "Visit Ho Chi Minh Mausoleum, Presidential Palace, One Pillar Pagoda, Temple of Literature and Hoan Kiem Lake."
+      },
+      {
+        day: "Day 3 – Hanoi → Halong Bay Cruise",
+        text: "Drive to Halong Bay. Board luxury cruise, enjoy kayaking, limestone caves, sunset party and overnight on cruise."
+      },
+      {
+        day: "Day 4 – Halong Bay → Hanoi → Flight to Ho Chi Minh",
+        text: "Morning Tai Chi on deck, brunch on cruise, return to Hanoi and fly to Ho Chi Minh City."
+      },
+      {
+        day: "Day 5 – Cu Chi Tunnels & City Tour",
+        text: "Visit Cu Chi Tunnels, War Remnants Museum, Notre Dame Cathedral and Ben Thanh Market."
+      },
+      {
+        day: "Day 6 – Departure",
+        text: "Transfer to airport for onward journey."
+      }
+    ]
+  },
 
-      modalTitle.textContent = dest.name;
+  singapore: {
+    title: "Singapore – 4 Nights / 5 Days",
+    img: "Singapore.webp",
+    days: [
+      {
+        day: "Day 1 – Arrival in Singapore",
+        text: "Arrival at Changi Airport. Transfer to hotel. Evening free to explore Clarke Quay and Marina Bay."
+      },
+      {
+        day: "Day 2 – Singapore City Tour",
+        text: "Visit Merlion Park, Marina Bay Sands SkyPark, Little India, Chinatown and Orchard Road."
+      },
+      {
+        day: "Day 3 – Sentosa Island",
+        text: "Enjoy cable car ride to Sentosa Island. Visit SEA Aquarium, Madame Tussauds and Wings of Time show."
+      },
+      {
+        day: "Day 4 – Universal Studios",
+        text: "Full day at Universal Studios Singapore enjoying rides, shows and attractions."
+      },
+      {
+        day: "Day 5 – Departure",
+        text: "Transfer to airport for onward journey."
+      }
+    ]
+  },
 
-      modalGallery.innerHTML = dest.gallery.map(img => `<img src="${img}" alt="">`).join('');
+  europe: {
+    title: "Europe – Multi Country Tour (France, Switzerland, Italy)",
+    img: "europe.jpeg",
+    days: [
+      {
+        day: "Day 1 – Arrival in Paris",
+        text: "Arrival in Paris. Evening Seine River Cruise and Eiffel Tower photo stop."
+      },
+      {
+        day: "Day 2 – Paris City Tour",
+        text: "Visit Louvre Museum, Champs-Élysées, Arc de Triomphe, Notre Dame Cathedral and Montmartre."
+      },
+      {
+        day: "Day 3 – Paris → Switzerland",
+        text: "Travel to Switzerland by coach/train. Visit Lucerne city, Chapel Bridge and Lion Monument."
+      },
+      {
+        day: "Day 4 – Mt. Titlis Excursion",
+        text: "Enjoy cable car ride to Mt. Titlis, snow activities, Ice Flyer and Cliff Walk."
+      },
+      {
+        day: "Day 5 – Switzerland → Italy",
+        text: "Travel to Italy. Visit Pisa Leaning Tower photo stop and Florence city tour."
+      },
+      {
+        day: "Day 6 – Rome & Vatican",
+        text: "Visit Colosseum, Roman Forum, Vatican City, St. Peter’s Basilica and Trevi Fountain."
+      },
+      {
+        day: "Day 7 – Departure",
+        text: "Transfer to airport for onward journey."
+      }
+    ]
+  }
+};
 
-      modalDescription.textContent = dest.description;
+function openModal(key){
+  const data = itineraries[key];
+  if(!data) return;
 
-      modalHotels.innerHTML = dest.hotels.map(h => `<span class="tag">${h}</span>`).join('');
+  const modal = document.getElementById("modal");
+  const content = document.getElementById("modalContent");
 
-      modalPrices.innerHTML = dest.prices.map(p => `
-        <div class="price-row"><span>${p.label}</span><span>${p.price}</span></div>
-      `).join('');
+  let html = `
+    <button class="close-btn" onclick="closeModal()">×</button>
+    <h2>${data.title}</h2>
+    <img src="${data.img}" alt="${data.title}">
+  `;
 
-      modalItinerary.innerHTML = Object.entries(dest.itinerary).map(([day, text]) => `
-        <div class="itinerary-day">
-          <h4>${day}</h4>
-          <p>${text}</p>
-        </div>
-      `).join('');
+  data.days.forEach(d=>{
+    html += `
+      <div class="itinerary-day">
+        <h4>${d.day}</h4>
+        <p>${d.text}</p>
+      </div>
+    `;
+  });
 
-      modal.classList.add('active');
-    }
+  html += `
+    <div class="modal-actions">
+      <button class="pdf-btn" onclick="downloadPDF('${key}')">Download PDF Itinerary</button>
+      <a class="btn" style="background:#25d366"
+         href="https://wa.me/919773669645?text=Hello%20Vagabond%20Escapes,%20I%20want%20to%20book%20the%20${encodeURIComponent(data.title)}%20package."
+         target="_blank">WhatsApp Enquiry</a>
+    </div>
+  `;
 
-    function closeModal() {
-      modal.classList.remove('active');
-    }
+  content.innerHTML = html;
+  modal.style.display = "flex";
+}
 
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
+function closeModal(){
+  document.getElementById("modal").style.display = "none";
+}
 
-    // =====================
-    // PDF DOWNLOAD
-    // =====================
+function downloadPDF(key){
+  const data = itineraries[key];
+  if(!data) return;
 
-    function downloadPDF() {
-      if (!currentDestination) return;
+  let text = `${data.title}\n\n`;
 
-      let content = `${currentDestination.name}\n\n${currentDestination.description}\n\nPrices:\n`;
-      currentDestination.prices.forEach(p => {
-        content += `${p.label}: ${p.price}\n`;
-      });
+  data.days.forEach(d=>{
+    text += `${d.day}\n${d.text}\n\n`;
+  });
 
-      content += `\nItinerary:\n`;
-      Object.entries(currentDestination.itinerary).forEach(([day, text]) => {
-        content += `${day}: ${text}\n\n`;
-      });
+  text += `\n\nCompany: Vagabond Escapes Pvt. Ltd.\nEmail: vagabondescapesinfo@gmail.com\nPhone: +91 9773669645 / 7524808364 / 9999625966`;
 
-      const blob = new Blob([content], { type: 'application/pdf' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `${currentDestination.name.replace(/\s+/g, '_')}_Itinerary.pdf`;
-      a.click();
-      URL.revokeObjectURL(url);
-    }
+  const blob = new Blob([text], { type: "application/pdf" });
+  const url = URL.createObjectURL(blob);
 
-    // =====================
-    // RAZORPAY PAYMENT
-    // =====================
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = data.title.replace(/\s+/g,'_') + ".pdf";
+  a.click();
+  URL.revokeObjectURL(url);
+}
 
-    function payNow() {
-      if (!currentDestination) return;
-      alert(`Redirecting to payment for ${currentDestination.name}.\n\n👉 Razorpay live key integration is ready in code. Just replace key in script.`);
-
-      /*
-      // Uncomment when adding real Razorpay key
-      const options = {
-        key: "YOUR_RAZORPAY_KEY_HERE",
-        amount: 1000 * 100, // example amount in paise
-        currency: "INR",
-        name: "Vagabond Escapes Pvt. Ltd.",
-        description: currentDestination.name + " Package",
-        handler: function (response) {
-          alert("Payment successful: " + response.razorpay_payment_id);
-        },
-        prefill: {
-          email: "vagabondescapesinfo@gmail.com",
-          contact: "9773669645",
-        },
-        theme: { color: "#ff6b6b" }
-      };
-      const rzp = new Razorpay(options);
-      rzp.open();
-      */
-    }
-
-    // =====================
-    // FOOTER YEAR
-    // =====================
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-  </script>
-
-  <!-- Razorpay script (keep even if not active yet) -->
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+window.onclick = function(event){
+  const modal = document.getElementById("modal");
+  if(event.target === modal){
+    closeModal();
+  }
+};
+</script>
 
 </body>
 </html>
